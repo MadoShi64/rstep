@@ -4,6 +4,10 @@
 # rstep
 
 <!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/MadoShi64/rstep.svg?branch=master)](https://travis-ci.com/MadoShi64/rstep)
+[![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
 <!-- badges: end -->
 
 The goal of rstep is to Provide functionality for my package. These
@@ -24,6 +28,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(rstep)
+#> Warning in as.POSIXlt.POSIXct(Sys.time()): unable to identify current timezone 'C':
+#> please set environment variable 'TZ'
 ## basic example code
 ```
 

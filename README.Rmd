@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 # rstep
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/MadoShi64/rstep.svg?branch=master)](https://travis-ci.com/MadoShi64/rstep)
+[![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
 <!-- badges: end -->
 
 The goal of rstep is to Provide functionality for my package. These function are
