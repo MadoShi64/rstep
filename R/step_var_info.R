@@ -1,0 +1,153 @@
+
+#' Information about STEP outputs
+#'
+#' @param keyword A keyword of the sought output
+#'
+#' @description Find step output names and their meanings
+#'
+#' @return The name of the output sought and its meaning
+#'
+#' @export
+#'
+#' @examples
+#' step_var_info("Shum")
+#' \dontrun{
+#' step_var_info("Shum")
+#' }
+#'
+step_var_info = function (keyword){
+  df= data.frame(step_output_variables = c("Rain : precipitation (mm.d-1)",
+                                           "Etp : evapotranspiration (mm.d-1)",
+                                           "Rayglo : global radiation (MJ.m-2)",
+                                           "Shum_0 : soil moisture layer0 [0-2cm] (mm.d-1)",
+                                           "Shum_1 : soil moisture layer1 [2-30cm] (mm.d-1)",
+                                           "Shum_2 : soil moisture layer2 [30-100cm] (mm.d-1)",
+                                           " Shum_3 : soil moisture layer3 [100-300cm] (mm.d-1)",
+                                           "Etot : evaporation (mm.d-1)",
+                                           "Trtot : transpiration (mm.d-1)",
+                                           "PST : photosynthese totale (g.m-2)",
+                                           "BMs : dry biomass (gMS.m-2)",
+                                           "BMv : green biomass (gMS.m-2)",
+                                           "Bmlita : biomass of litter (gMS.m-2)",
+                                           "Psife : leaf potential (bars)",
+                                           "Rstoe : stomatal resistance (s.cm-1)",
+                                           "REspCv : growth respiration (g.m-2)",
+                                           "REspEv : maintenance respiration (g.m-2)",
+                                           "Psi(1) : soil water potential layer1 (bars)",
+                                           "Psi(2) : soil water potential layer2 (bars)",
+                                           "Psi(3) : soil water potential layer3 (bars)",
+                                           "BMr : root biomass (gMS.m-2)",
+                                           "RespCr : roots growth respiration (g.m-2)",
+                                           "RespEr : roots maintenance respiration (g.m-2)",
+                                           "a : allocation coefficient",
+                                           "BMrs : dry root biomass (gMS.m-2)",
+                                           "Epsiloni : interception of Photosynthetically Active Radiation (PAR)",
+                                           "Photoresp : photorespiration rate",
+                                           "Bmlits : biomass of litter on the ground (buried) (gMS.m-2)",
+                                           "Bmburn : burnt biomass (gMS.m-2)",
+                                           "Bmfec : cumulative feces biomass (gMS.m-2)",
+                                           "Bming : cumulative ingested biomass (gMS.m-2)",
+                                           "Bmsts : biomass of diaspores in place (gMS.m-2)",
+                                           "Bmsss : biomass of diaspores on the ground (gMS.m-2)",
+                                           "BSOM : organic matter on the ground (gMS.m-2)",
+                                           "Temp : daily temperature (degC)",
+                                           "Vent : wind speed (m.s.d-1)",
+                                           "Vapeur : vapor pressure (hPa)",
+                                           "BurntF : proportion of burnt area [0-1]",
+                                           "chaTotJ : total animal load for the day",
+                                           "TqCs : total amount of carbon in the soil (gC)",
+                                           "Cs(1) : carbon in soil layer1 (gC)",
+                                           "Cs(2) : carbon in soil layer2 (gC)",
+                                           "Cs(3) : carbon in soil layer3 (gC)",
+                                           "Cs(4) : carbon in soil layer4 (gC)",
+                                           "Cs(5) : carbon in soil layer5 (gC)",
+                                           "Cs(6) : carbon in soil layer6 (gC)",
+                                           "Total_N : total amount of nitrogen in the soil (gN)",
+                                           "Amonia : mineral nitrogen(gN)",
+                                           "End_N_(Norga) : organic nitrogen plus dead microbes (gN)",
+                                           "Sub_N : daily quantity of nitrogen brought to microbes (gN.d-1)",
+                                           "Bn : total amount of microbe (gN)",
+                                           "Co2S : carbon dioxide released by microbes (gMS.m-2)",
+                                           "Ih(1) : thickness of layer1 (cm-1)",
+                                           "Ih(2) : thickness of layer2 (cm-1)",
+                                           "Ih(3) : thickness of layer3 (cm-1)",
+                                           "HCr(1) : holding capacity layer1 (m3.m-3)",
+                                           "Hlim : lower limit of the stock layer1 (m3.m-3)",
+                                           "HFle : humidity rate at wilting point layer1 (m3.m-3)",
+                                           "HCr(2) : holding capacity layer2 (m3.m-3)",
+                                           "Hlim : lower limit of the stock layer2 (m3.m-3)",
+                                           "HFle : humidity rate at wilting point layer2 (m3.m-3)",
+                                           "HCr(3) : holding capacity layer3 (m3.m-3)",
+                                           "Hlim : lower limit of the stock layer3 (m3.m-3)",
+                                           "HFle : humidity rate at wilting point layer3 (m3.m-3)",
+                                           "EP : evaporation from perennial plants (mm)",
+                                           "TrP : transpiration from perennial plants (mm)",
+                                           "PSTP : photosynthese totale from perennial plants (g.m-2)",
+                                           "REspCPv : growth respiration from perennial plants (g.m-2)",
+                                           "REspEPv : maintenance respiration from perennial plants (g.m-2)",
+                                           "BMPv : green biomass of perennial plants (gMS.m-2)",
+                                           "BPMs : dry biomass of perennial plants (gMS.m-2)",
+                                           "(BMPlita) : biomass of litter from perennial plants (gMS.m-2)",
+                                           "PsifP : leaf potential of perennial plants (bars)",
+                                           "RstoP : stomatal resistance of perennial plants (s.cm-1)",
+                                           "BMPr : root biomass of perennial plants (gMS.m-2)",
+                                           "RespCPr : perennial plants roots growth respiration (gMS.m-2)",
+                                           "RespEPr : perennial plants roots maintenance respiration (gMS.m-2)",
+                                           "BMPrs : perennial plants root dry biomass (gMS.m-2)",
+                                           "EpsiloniP : interception of Photosynthetically Active Radiation (PAR) by perennial plants",
+                                           "PhotorespP : photorespiration rate of perennial plants",
+                                           "(BPburn) : perennial plants burnt biomass (gMS.m-2)",
+                                           "(BPing) : perennial plants cumulative ingested biomass (gMS.m-2)",
+                                           "BPsts : perennial plants biomass of diaspores in place (gMS.m-2)",
+                                           "BPsss : perennial plants biomass of diaspores on the ground (gMS.m-2)",
+                                           "BLmv : perennial plants biomass (gMS.m-2)",
+                                           "BFlita : perennial plants biomass of litter on the ground (gMS.m-2)",
+                                           "LAILv : geen LAI",
+                                           "hca : ",
+                                           "hcp : ",
+                                           "LAIv : ",
+                                           "LAIPv : perennial plants green LAI",
+                                           "G :" ,
+                                           "rss : ",
+                                           "Snvege : ",
+                                           "SnSolnu : ",
+                                           "Sn : ",
+                                           "Ln : ",
+                                           "Rn : ",
+                                           "H : ",
+                                           "LAIs : dry LAI",
+                                           "LAIPs : perennial plants dry LAI",
+                                           "LAIlita : LAI of litter",
+                                           "vcfv : ground cover by green biomass",
+                                           "vcfs : ground cover by dry biomass",
+                                           "vcfl : ground cover by litter biomass",
+                                           "vcft : total ground cover",
+                                           "NOFLUX_(kgN/ha/an) : daily amount of NO emitted from soil (kgN.ha-1)",
+                                           "Bc : microbial C pool",
+                                           "NOFlux_Process : daily amount of N0 emitted from soil by mineralisation/nitrification  (kgN.ha-1)",
+                                           "N2OFlux_Process : daily amount of N20 emitted from soil by mineralisation/nitrification  (kgN.ha-1)",
+                                           "NO3 : concentration of NO3 in soil (kgN.ha-1)",
+                                           "NO2 : concentration of NO2 in soil (kgN.ha-1)",
+                                           "N2O : concentration of N2O in soil (kgN.ha-1)",
+                                           "En20 : total amount of N2O emitted from soil by nitrification  and denitrification (kgN.ha-1)",
+                                           "wfps : Water Filed Pore Space",
+                                           "En2o_NOE : (En20 converted) total amount of N2O emitted from soil by nitrification and denitrification (ngN.m-2.s-1)",
+                                           "Shum_0_per : soil moisture layer0 [0-2cm] (percentage)",
+                                           "Shum_1_per : soil moisture layer1 [2-30cm] (percentage)",
+                                           "Shum_2_per : soil moisture layer2 [30-100cm] (percentage)",
+                                           "Shum_3_per : soil moisture layer3 [100-300cm] (percentage)",
+                                           "fsj : rate of bare soil ",
+                                           "vcft : total groung cover",
+                                           "Etr : relative evapotranspiration (m2.m-2)",
+                                           "CO2Soil : Microbial Respiration (gC.m-2)"
+
+  ))
+  var = df$step_output_variables[grep(keyword,df$step_output_variables)]
+  if (identical(var,character(0))){
+    return(paste0("No STEP output called '", keyword, "'. Try again!"))
+
+  } else{
+    return(var)
+  }
+
+}
