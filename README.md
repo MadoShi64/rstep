@@ -10,6 +10,8 @@ status](https://travis-ci.com/MadoShi64/rstep.svg?branch=master)](https://travis
 [![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/MadoShi64/rstep?branch=master&svg=true)](https://ci.appveyor.com/project/MadoShi64/rstep)
+[![Codecov test
+coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MadoShi64/rstep?branch=master)
 <!-- badges: end -->
 
 The goal of rstep is to Provide functionality for my package. These
