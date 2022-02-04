@@ -29,7 +29,7 @@ Usually the path of the folder daily_original}
 
 \item{ylab}{name of the y axis}
 
-\item{errorbar}{notify weather or not you want to display errorbars}
+\item{errorbar}{notify whether or not you want to display errorbars}
 }
 \value{
 a double bar graph of the annual sum or mean of the selected variable

@@ -4,7 +4,7 @@
 #' @param dataframe the name of the dataframe generated with the function gen_table
 #' @param varname the name of the STEP variable
 #' @param type the type of plot you want "dynamic time series or a scatter plot)
-#' @param obs notify weather or not you want to display the observations alongside
+#' @param obs notify whether or not you want to display the observations alongside
 #'
 #' @description step_plot displays a dynamic plot or a scatter plot for selected step variable
 #'

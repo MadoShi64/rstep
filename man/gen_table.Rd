@@ -18,7 +18,7 @@ output file you are processing}
 \item{sim_variables}{names of the variables you want to process
 e.g. sim_variables = c("Rain","CO2Soil","Shum_1_per")}
 
-\item{obs}{notify weither or not you have observation data of the variables of interest}
+\item{obs}{notify whether or not you have observation data of the variables of interest}
 }
 \value{
 a dataframe of the variables of interest. the observation data and the result

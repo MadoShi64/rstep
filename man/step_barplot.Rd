@@ -13,7 +13,7 @@ step_barplot(dataframe, varname, fun, errorbar)
 
 \item{fun}{the operation you want to perform : sum or mean}
 
-\item{errorbar}{notify weather or not you want to display errorbars}
+\item{errorbar}{notify whether or not you want to display errorbars}
 }
 \value{
 a bar graph of the annual sum or mean of the selected variable

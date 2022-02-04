@@ -13,7 +13,7 @@ step_plot(dataframe, varname, type, obs = TRUE)
 
 \item{type}{the type of plot you want "dynamic time series or a scatter plot)}
 
-\item{obs}{notify weather or not you want to display the observations alongside}
+\item{obs}{notify whether or not you want to display the observations alongside}
 }
 \value{
 a plot "a dynamic time series or a scatter plot"

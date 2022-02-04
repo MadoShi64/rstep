@@ -8,7 +8,7 @@
 #' @param filename the name of the STEP output file your are processing
 #' @param sim_variables names of the variables you want to process
 #' e.g. sim_variables = c("Rain","CO2Soil","Shum_1_per")
-#' @param obs notify weither or not you have observation data of the variables of interest
+#' @param obs notify whether or not you have observation data of the variables of interest
 #'
 #' @description gen_table generates dataframe to process selected variables
 #'

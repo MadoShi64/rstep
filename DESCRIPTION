@@ -15,7 +15,8 @@ BugReports: https://github.com/MadoShi64/rstep/issues
 Suggests: 
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Imports: 
     gdata,
@@ -28,3 +29,4 @@ Imports:
     readr,
     readxl,
     tidyr
+Config/testthat/edition: 3

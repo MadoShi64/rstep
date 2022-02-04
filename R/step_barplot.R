@@ -4,7 +4,7 @@
 #' @param dataframe the name of the dataframe generated with the function gen_table
 #' @param varname the name of the STEP variable
 #' @param fun the operation you want to perform : sum or mean
-#' @param errorbar notify weather or not you want to display errorbars
+#' @param errorbar notify whether or not you want to display errorbars
 #'
 #' @description step_barplot displays a bar graph of the annual sum or mean of the selected variable
 #'

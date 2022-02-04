@@ -11,7 +11,7 @@
 #' @param varname the name of the STEP variable
 #' @param fun the operation you want to perform : sum or mean
 #' @param ylab name of the y axis
-#' @param errorbar notify weather or not you want to display errorbars
+#' @param errorbar notify whether or not you want to display errorbars
 #'
 #' @description step_Dbarplot displays a double bar graph of the annual sum or mean of the selected variable
 #'
