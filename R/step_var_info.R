@@ -10,7 +10,6 @@
 #' @export
 #'
 #' @examples
-#' step_var_info("Shum")
 #' \dontrun{
 #' step_var_info("Shum")
 #' }

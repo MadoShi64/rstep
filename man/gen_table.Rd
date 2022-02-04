@@ -28,8 +28,6 @@ of the current and the previous simulation "test0_data", all bind together
 gen_table generates dataframe to process selected variables
 }
 \examples{
-gen_table(filepath = filepath,workspace = workspace,filename = "Dahra",
-sim_variables = sim_variables,obs=TRUE)
 \dontrun{
 gen_table(filepath = filepath,workspace = workspace,filename = "Dahra",
 sim_variables = sim_variables,obs=TRUE)

@@ -22,7 +22,6 @@ a plot "a dynamic time series or a scatter plot"
 step_plot displays a dynamic plot or a scatter plot for selected step variable
 }
 \examples{
-step_plot(dataframe = df, varname = "Etr",type="dynamic",obs=TRUE)
 \dontrun{
 step_plot(dataframe = df, varname = "Etr",type="dynamic",obs=TRUE)
 }

@@ -22,7 +22,6 @@ a bar graph of the annual sum or mean of the selected variable
 step_barplot displays a bar graph of the annual sum or mean of the selected variable
 }
 \examples{
-step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
 \dontrun{
 step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
 }

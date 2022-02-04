@@ -32,8 +32,6 @@ The function takes dataframe with: names(dataframe)="date" "day" "year" "rain" "
  "temp_max" "pvap_2_m_hPa" "Wind_Speed".
 }
 \examples{
-gen_step_mto(workspace = workspace,dataframe=df,isite="Dahra",
-year = "12",alt=308,lat=15.4,hautmes=2)
 \dontrun{
 gen_step_mto(workspace = workspace,dataframe=df,isite="Dahra",
 year = "12",alt=308,lat=15.4,hautmes=2)

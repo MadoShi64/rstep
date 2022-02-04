@@ -27,8 +27,6 @@
 #' @importFrom utils write.table
 #'
 #' @examples
-#' gen_step_mto(workspace = workspace,dataframe=df,isite="Dahra",
-#' year = "12",alt=308,lat=15.4,hautmes=2)
 #' \dontrun{
 #' gen_step_mto(workspace = workspace,dataframe=df,isite="Dahra",
 #' year = "12",alt=308,lat=15.4,hautmes=2)

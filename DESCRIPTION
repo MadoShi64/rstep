@@ -17,4 +17,13 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Imports: 
-    tibble
+    gdata,
+    dplyr,
+    Metrics,
+    tibble,
+    ggplot2,
+    lubridate,
+    openxlsx,
+    readr,
+    readxl,
+    tidyr

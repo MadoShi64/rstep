@@ -25,7 +25,6 @@
 #'
 #'
 #' @examples
-#' step_reg(dataframe = df,varname = "CO2Soil",target = "metric")
 #' \dontrun{
 #' step_reg(dataframe = df,varname = "CO2Soil",target = "metric")
 #' }

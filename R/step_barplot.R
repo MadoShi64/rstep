@@ -12,6 +12,7 @@
 #' @export
 #'
 #'
+#' @importFrom stats sd
 #' @importFrom stats aggregate
 #' @import ggplot2
 #' @import dplyr
@@ -19,7 +20,6 @@
 #'
 #'
 #' @examples
-#' step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
 #' \dontrun{
 #' step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
 #' }

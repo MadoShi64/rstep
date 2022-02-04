@@ -23,7 +23,6 @@ if target = "summary" it displays the summary table of the regression,
 if target = "metric" it displays the metric of the regression
 }
 \examples{
-step_reg(dataframe = df,varname = "CO2Soil",target = "metric")
 \dontrun{
 step_reg(dataframe = df,varname = "CO2Soil",target = "metric")
 }

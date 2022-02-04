@@ -15,10 +15,8 @@
 #' @import tidyr
 #' @import dplyr
 #' @import lubridate
-#' @importFrom stats lm
 #'
 #' @examples
-#' step_plot(dataframe = df, varname = "Etr",type="dynamic",obs=TRUE)
 #' \dontrun{
 #' step_plot(dataframe = df, varname = "Etr",type="dynamic",obs=TRUE)
 #' }

@@ -18,6 +18,7 @@
 #' @return a double bar graph of the annual sum or mean of the selected variable
 #' @export
 #'
+#' @importFrom stats sd
 #' @importFrom stats aggregate
 #' @import ggplot2
 #' @import dplyr
@@ -25,9 +26,6 @@
 #'
 #'
 #' @examples
-#' step_Dbarplot(dataframe=df,file.name = "SeasonDahra2012-2020",
-#' filepath = filepath,fun="sum",errorbar = FALSE,
-#' varname = "CO2Soil",ylab="CO2 emitted per season (gC/m2)")
 #' \dontrun{
 #' step_Dbarplot(dataframe=df,file.name = "SeasonDahra2012-2020",
 #' filepath = filepath,fun="sum",errorbar = FALSE,

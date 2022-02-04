@@ -16,7 +16,6 @@ The name of the output sought and its meaning
 Find step output names and their meanings
 }
 \examples{
-step_var_info("Shum")
 \dontrun{
 step_var_info("Shum")
 }

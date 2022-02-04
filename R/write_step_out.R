@@ -15,22 +15,21 @@
 #' @export
 #'
 #' @importFrom utils write.table
+#' @importFrom utils write.csv
 #' @importFrom utils read.table
 #' @importFrom openxlsx write.xlsx
 #'
 #' @examples
-#' write_step_out("Dahra",workspace,12,20,"csv")
 #' \dontrun{
 #' write_step_out("Dahra",workspace,12,20,"csv")
 #' }
 #'
 #'
 write_step_out = function(file.name,workspace,state.date,end.date,format="csv"){
-  #setwd(workspace)
-  #library(openxlsx)
+
   Output = NULL
   for (i in state.date:end.date){
-    df =  read.table(paste0(workspace,"/S01001",i,".out"), h=FALSE, dec=".")
+    df =  read.table(paste0(workspace,"/S01001",i,".out"), header = FALSE, dec=".")
     #assign(paste0("data",i),df)
     Output <- rbind(Output, df) # bind the row of all iterations
   }
@@ -48,7 +47,6 @@ write_step_out = function(file.name,workspace,state.date,end.date,format="csv"){
               "Ln",	"Rn",	"H",	"LAIs","LAIPs","LAIlita","vcfv","vcfs","vcfl","vcft","NOFLUX_(kgN/ha/an)","Bc","NOFlux_Process",
               "N2OFlux_Process","NO3","NO2","N2O","En20","wfps","En2o_NOE")#from 52Output put "Vcfs" between Vcfv and Vcfl
   #title <- data.frame(t(title0))# new row for the titles
-  #colnames(Output) <- title
   #add the column titles to the new data frame
   colnames(Output) <- title0
 
