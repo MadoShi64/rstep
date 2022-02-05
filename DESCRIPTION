@@ -1,11 +1,11 @@
 Package: rstep
 Type: Package
-Title: Process Step Outputs
+Title: rstep: an R package for processing STEP model outputs
 Version: 0.1.0
 Author: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Maintainer: Yelognisse Agbohessou <ayulrich@yahoo.fr>
-Description: Provide functionality for my package. These function are
-    for use only with Yelognisse Agbohessou and No other people.
+Year: 2022
+Description: The goal of rstep is to provide simple functions for quick processing of STEP model outputs.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
