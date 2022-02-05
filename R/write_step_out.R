@@ -5,7 +5,7 @@
 #' @param workspace the directory, where there are the files you want to format.
 #' And where you to store the new files
 #' @param state.date the two last digits of the first year. e.g. for 2012 it is "12"
-#' @param end.date the two last digits of the last year. e.g. for 2020 it is "20"
+#' @param end.date the two last digits of the last year of simulation.. e.g. for 2020 it is "20"
 #'
 #' @param format the desired format for the file e.g. xlsx or csv
 #'

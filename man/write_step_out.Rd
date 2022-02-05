@@ -14,7 +14,7 @@ And where you to store the new files}
 
 \item{state.date}{the two last digits of the first year. e.g. for 2012 it is "12"}
 
-\item{end.date}{the two last digits of the last year. e.g. for 2020 it is "20"}
+\item{end.date}{the two last digits of the last year of simulation.. e.g. for 2020 it is "20"}
 
 \item{format}{the desired format for the file e.g. xlsx or csv}
 }
