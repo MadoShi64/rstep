@@ -14,21 +14,21 @@ status](https://ci.appveyor.com/api/projects/status/github/MadoShi64/rstep?branc
 coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MadoShi64/rstep?branch=master)
 <!-- badges: end -->
 
-The goal of rstep is to Provide functionality for my package. These
-function are for use only with Yelognisse Agbohessou and No other
-people.
+The goal of rstep is to Provide functionality for quick processing of
+STEP model outputs.
 
 ## Installation
 
 You can install the development version of rstep like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+install.packages("rstep")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to perform a linear
+regression for a variable of interest and display the graph and metrics
 
 ``` r
 library(rstep)
@@ -37,29 +37,26 @@ library(rstep)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+An example with a random dataset.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+set.seed(15)
+Etr = abs(rnorm(30))# Etr = Etr measured 
+Etr.simu = abs(rnorm(30)) # Etr.simu = Etr simulated with STEP
+
+# create data frame
+data = data.frame(Etr,Etr.simu) 
+
+# Plot the graph of the regression
+step_reg(data,"Etr","plot")
+#> `geom_smooth()` using formula 'y ~ x'
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<a href="https://github.com/r-lib/actions/tree/v1/examples" class="uri">https://github.com/r-lib/actions/tree/v1/examples</a>.
+<img src="man/figures/README-cars-1.png" width="100%" />
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+# Check the metrics of the linear regression 
+step_reg(data,"Etr","metric")
+#>   r.squared      rmse       mae accuracy       bias
+#> 1 0.1652742 0.8668114 0.6749571        0 -0.1425967
+```
