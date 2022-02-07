@@ -10,7 +10,7 @@
 #'   \item{4:}{progressive}
 #'   \item{5:}{late}
 #'   \item{6:}{very late}
-#'   \item{}{if the first value = -1 (default values)}
+#'   \item{7}{if the first value = -1 (default values)}
 #' }
 #'
 #'

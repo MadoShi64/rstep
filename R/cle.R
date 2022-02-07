@@ -4,9 +4,9 @@
 #'
 #' \describe{
 #'   \item{1 Line:}{ conversion efficiency (gMS/MJ)}
-#'   \item{-}{initial green biomass (gMS/m2)}
-#'   \item{-}{Percentage of C3 (%)}
-#'   \item{-}{Initial slag (cm² g-1)}
+#'   \item{1}{initial green biomass (gMS/m2)}
+#'   \item{2}{Percentage of C3 (%)}
+#'   \item{3}{Initial slag (cm² g-1)}
 #' }
 #'
 #'
