@@ -25,7 +25,7 @@ gen_step_file generates examples of STEP initialisation file in excel format
 }
 \examples{
 \dontrun{
-gen_step_file(filepath = filepath,filename =".cha",
+gen_step_file(filepath = filepath,filename ="cha",
 }
 
 }

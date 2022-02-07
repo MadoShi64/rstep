@@ -28,7 +28,7 @@ if filename = ".wet" it generates S100112.wet file in excel format to edit
 }
 \examples{
 \dontrun{
-gen_step_xlsx(filepath,".sol")
+gen_step_xlsx(filepath,"sol")
 }
 
 
