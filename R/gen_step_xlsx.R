@@ -49,7 +49,7 @@ gen_step_xlsx = function(filepath=NULL,filename){
   if (filename == "sol"){
     write.xlsx(sol,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".veg"){
+  if (filename == "veg"){
     write.xlsx(veg,paste0(filepath,filename,".xlsx"))
   }
   if (filename == "wet"){
