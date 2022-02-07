@@ -2,7 +2,7 @@
 #'
 #' sol : is an example of STEP file ".sol" used for STEP input soil parameters
 #'
-#'\describe{
+#' \describe{
 #'   \item{1 Line:}{ site name}
 #'   \item{1 Line:}{vegetation}
 #'   \item{1 Line:}{4 * soil layers thickness}

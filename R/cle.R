@@ -2,7 +2,7 @@
 #'
 #' cle : is an example of STEP file ".cle" used for STEP calibration parameters
 #'
-#'\describe{
+#' \describe{
 #'   \item{1 Line:}{ conversion efficiency (gMS/MJ)}
 #'   \item{-}{initial green biomass (gMS/m2)}
 #'   \item{-}{Percentage of C3 (%)}

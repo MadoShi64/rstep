@@ -3,16 +3,20 @@
 \docType{data}
 \name{cha}
 \alias{cha}
-\title{Example of STEP file S0100120.cha}
+\title{STEP file S0100120.cha}
 \format{
-A tibble. Example of a STEP file S0100120.cha: an input file of STEP
+A tibble
 }
 \usage{
 cha
 }
 \description{
 cha : is an example of .cha file used for animal load
-Structure: 1 Line: type of distribution of animals by category (Cattle) (Goats) (Sheep) (Donkeys) (Camelins) (Horse)
-           31 Lines: Day, total animal load (number UBT/ha) * 12
+}
+\details{
+\describe{
+  \item{1 Line:}{ type of distribution of animals by category (Cattle) (Goats) (Sheep) (Donkeys) (Camelins) (Horse)}
+  \item{31 Lines:}{Day, total animal load (number UBT/ha) * 12}
+}
 }
 \keyword{datasets}

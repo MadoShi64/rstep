@@ -3,9 +3,9 @@
 \docType{data}
 \name{bmt}
 \alias{bmt}
-\title{Example of STEP file S0100120.bmt}
+\title{STEP file S0100120.bmt}
 \format{
-A tibble. Example of a STEP file S0100120.bmt: an input file of STEP
+A tibble
 }
 \usage{
 bmt

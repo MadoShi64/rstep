@@ -2,7 +2,7 @@
 #'
 #' veg: is an example of STEP file ".veg" used for STEP input vegetation parameters
 #'
-#'\describe{
+#' \describe{
 #'   \item{1 Line:}{Initial dry biomass & litter (gMS/m²)}
 #'   \item{1 Line:}{Root biomass fraction (layers 1,2,3)}
 #'   \item{1 Line:}{Percentage of C3}
