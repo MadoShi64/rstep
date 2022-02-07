@@ -3,7 +3,7 @@
 #' Write STEP2D input files for each site
 #'
 #' @param filepath path to where you want to store the file generated
-#' @param filename the name of the initialisation file you want to generate
+#' @param filename the name of the initialisation file you want to generate (the extension)
 #' @param state.date the two last digits of the first year of simulation. e.g. for 2012 it is "12"
 #' @param end.date the two last digits of the last year of simulation.. e.g. for 2020 it is "20"
 #' @param isite id of the site. e.g. "S02", usually the name of the folder in which you want to store the data

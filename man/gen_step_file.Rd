@@ -15,7 +15,7 @@ gen_step_file(filepath, filename, state.date, end.date, isite)
 
 \item{end.date}{the two last digits of the last year of simulation.. e.g. for 2020 it is "20"}
 
-\item{isite}{id of the site. e.g. "S02"}
+\item{isite}{id of the site. e.g. "S02", usually the name of the folder in which you want to store the data}
 }
 \value{
 STEP input file formats : ".dat",".bmt",".burn",".cha",".cle",".disp",".sol",".veg",".wet"
