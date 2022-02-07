@@ -29,31 +29,31 @@
 #'
 gen_step_xlsx = function(filepath=NULL,filename){
   if (filename == "dat"){
-    write.xlsx(dat,paste0(filepath,filename,".xlsx"))
+    write.xlsx(dat,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "bmt"){
-    write.xlsx(bmt,paste0(filepath,filename,".xlsx"))
+    write.xlsx(bmt,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "burn"){
-    write.xlsx(burn,paste0(filepath,filename,".xlsx"))
+    write.xlsx(burn,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "cha"){
-    write.xlsx(cha,paste0(filepath,filename,".xlsx"))
+    write.xlsx(cha,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "cle"){
-    write.xlsx(cle,paste0(filepath,filename,".xlsx"))
+    write.xlsx(cle,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "disp"){
-    write.xlsx(disp,paste0(filepath,filename,".xlsx"))
+    write.xlsx(disp,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "sol"){
-    write.xlsx(sol,paste0(filepath,filename,".xlsx"))
+    write.xlsx(sol,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "veg"){
-    write.xlsx(veg,paste0(filepath,filename,".xlsx"))
+    write.xlsx(veg,paste0(filepath,"/",filename,".xlsx"))
   }
   if (filename == "wet"){
-    write.xlsx(wet,paste0(filepath,filename,".xlsx"))
+    write.xlsx(wet,paste0(filepath,"/",filename,".xlsx"))
   }
 }
 

@@ -9,7 +9,7 @@ gen_step_file(filepath, filename, state.date, end.date, isite)
 \arguments{
 \item{filepath}{path to where you want to store the file generated}
 
-\item{filename}{the name of the initialisation file you want to generate}
+\item{filename}{the name of the initialisation file you want to generate (the extension)}
 
 \item{state.date}{the two last digits of the first year of simulation. e.g. for 2012 it is "12"}
 
