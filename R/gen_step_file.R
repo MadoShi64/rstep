@@ -18,20 +18,20 @@
 #'
 #' @examples
 #' \dontrun{
-#' gen_step_file(filepath = filepath,filename =".cha",
+#' gen_step_file(filepath = filepath,filename ="cha",
 #                 state.date = 12,end.date = 20,isite = "S02")
 #' }
 #'
 gen_step_file = function(filepath,filename,
                          state.date,end.date,isite){
-  if(filename==".dat"){
+  if(filename=="dat"){
     data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
-    myfile <- file.path(paste0(filepath,"/",isite,"/","pluri", filename))
+    myfile <- file.path(paste0(filepath,"/",isite,"/","pluri.", filename))
     write.table(data, file = myfile,sep="\t",col.names=FALSE, row.names=FALSE,na="",quote=FALSE)
   }else{
     data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
     for (i in state.date:end.date) {
-      myfile <- file.path(paste0(filepath,"/",isite,"/","S01001", i, filename))
+      myfile <- file.path(paste0(filepath,"/",isite,"/","S01001", i,".", filename))
       write.table(data, file = myfile,sep="\t",col.names=FALSE, row.names=FALSE,na="",quote=FALSE)
     }
   }

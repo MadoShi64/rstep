@@ -23,36 +23,36 @@
 #'
 #' @examples
 #' \dontrun{
-#' gen_step_xlsx(filepath,".sol")
+#' gen_step_xlsx(filepath,"sol")
 #' }
 #'
 #'
 gen_step_xlsx = function(filepath=NULL,filename){
-  if (filename == ".dat"){
+  if (filename == "dat"){
     write.xlsx(.dat,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".bmt"){
+  if (filename == "bmt"){
     write.xlsx(.bmt,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".burn"){
+  if (filename == "burn"){
     write.xlsx(.burn,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".cha"){
+  if (filename == "cha"){
     write.xlsx(.cha,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".cle"){
+  if (filename == "cle"){
     write.xlsx(.cle,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".disp"){
+  if (filename == "disp"){
     write.xlsx(.disp,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".sol"){
+  if (filename == "sol"){
     write.xlsx(.sol,paste0(filepath,filename,".xlsx"))
   }
   if (filename == ".veg"){
     write.xlsx(.veg,paste0(filepath,filename,".xlsx"))
   }
-  if (filename == ".wet"){
+  if (filename == "wet"){
     write.xlsx(.wet,paste0(filepath,filename,".xlsx"))
   }
 }
