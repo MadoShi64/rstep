@@ -5,16 +5,16 @@
 #' @param filename the name of the initialisation file you want to generate
 #'
 #'
-#' @description gen_step_xlsx generates examples of STEP initialisation file in excel format
-#' if filename = ".dat" it generates pluri.dat file in excel format to edit
-#' if filename = ".bmt" it generates S100112.bmt file in excel format to edit
-#' if filename = ".burn" it generates S100112.burn file in excel format to edit
-#' if filename = ".cha" it generates S100112.cha file in excel format to edit
-#' if filename = ".cle" it generates S100112.cle file in excel format to edit
-#' if filename = ".disp" it generates S100112.disp file in excel format to edit
-#' if filename = ".sol" it generates S100112.sol file in excel format to edit
-#' if filename = ".veg" it generates S100112.veg file in excel format to edit
-#' if filename = ".wet" it generates S100112.wet file in excel format to edit
+#' @description gen_step_xlsx generates examples of STEP initialisation file in excel format.
+#' - if filename = ".dat" it generates pluri.dat file in excel format to edit.
+#' - if filename = ".bmt" it generates S100112.bmt file in excel format to edit.
+#' - if filename = ".burn" it generates S100112.burn file in excel format to edit.
+#' - if filename = ".cha" it generates S100112.cha file in excel format to edit.
+#' - if filename = ".cle" it generates S100112.cle file in excel format to edit.
+#' - if filename = ".disp" it generates S100112.disp file in excel format to edit.
+#' - if filename = ".sol" it generates S100112.sol file in excel format to edit.
+#' - if filename = ".veg" it generates S100112.veg file in excel format to edit.
+#' - if filename = ".wet" it generates S100112.wet file in excel format to edit.
 #'
 #' @importFrom openxlsx write.xlsx
 #'
