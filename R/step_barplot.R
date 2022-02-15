@@ -24,7 +24,10 @@
 #' step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
 #' }
 #'
-step_barplot = function(dataframe,varname,fun,errorbar){
+step_barplot = function(dataframe,
+                        varname,
+                        fun,
+                        errorbar){
   dataframe$years <- format(dataframe$Date, "%Y")
   sumYear1 <- aggregate(dataframe[,varname]~years, dataframe, "mean")
   sumYear2 <- aggregate(dataframe[,varname]~years, dataframe, "sum")

@@ -8,7 +8,8 @@
 #' @param filename the name of the STEP output file your are processing
 #' @param sim_variables names of the variables you want to process
 #' e.g. sim_variables = c("Rain","CO2Soil","Shum_1_per")
-#' @param obs notify whether or not you have observation data of the variables of interest
+#' @param obs notify whether or not you have observation data of the variables of interest (if the file "obs_data.xlsx" is present in filepath's folder)
+#' @param test0 notify whether or not you want to process data from a previous simulation (if the file "test0_data.xlsx" is present in filepath's folder)
 #'
 #' @description gen_table generates dataframe to process selected variables
 #'
@@ -26,14 +27,19 @@
 #' @examples
 #' \dontrun{
 #' gen_table(filepath = filepath,workspace = workspace,filename = "Dahra",
-#' sim_variables = sim_variables,obs=TRUE)
+#' sim_variables = sim_variables,obs=T,test0=F)
 #' }
 #'
 #'
 #'
-gen_table = function(filepath,workspace,filename,sim_variables,obs=TRUE){
+gen_table = function(filepath,
+                     workspace,
+                     filename,
+                     sim_variables,
+                     obs=F,
+                     test0 =F){
   #library(readr)
-  if (obs == TRUE){
+  if (obs == T & test0 == T){
     simu= read_csv(paste0(workspace,"/",filename,".csv"),
                    col_types = cols(Date = col_date(format = "%Y-%m-%d")))
 
@@ -53,6 +59,38 @@ gen_table = function(filepath,workspace,filename,sim_variables,obs=TRUE){
     data1$Date = as.Date(data1$Date)
 
     return(data1)
+  }
+  if(obs == T & test0 == F){
+    simu= read_csv(paste0(workspace,"/",filename,".csv"),
+                   col_types = cols(Date = col_date(format = "%Y-%m-%d")))
+
+    simu = data.frame(Date=as.POSIXct(simu$Date),simu[sim_variables])
+
+
+    obs=readxl::read_excel(paste0(filepath,"/obs_data.xlsx"))
+    obs<-replace(obs,obs == -999,NA)
+    obs = cbind(obs[1], obs[sim_variables])
+
+    data = merge(obs,simu,by.x = "Date", by.y = "Date", suffixes = c("",".simu"))
+    data$Date = as.Date(data$Date)
+
+    return(data)
+
+  }
+  if(obs == F & test0 == T){
+    simu= read_csv(paste0(workspace,"/",filename,".csv"),
+                   col_types = cols(Date = col_date(format = "%Y-%m-%d")))
+
+    simu = data.frame(Date=as.POSIXct(simu$Date),simu[sim_variables])
+
+    test0 = readxl::read_excel(paste0(filepath,"/test0_data.xlsx"))
+    test0 = cbind(test0[1], test0[sim_variables])
+
+    data = merge(simu,test0,by.x = "Date", by.y = "Date",suffixes = c(".simu",".simu0"))
+
+    data$Date = as.Date(data$Date)
+
+    return(data)
   }else{
     simu= read_csv(paste0(workspace,"/",filename,".csv"),
                    col_types = cols(Date = col_date(format = "%Y-%m-%d")))
@@ -62,3 +100,4 @@ gen_table = function(filepath,workspace,filename,sim_variables,obs=TRUE){
   }
 
 }
+

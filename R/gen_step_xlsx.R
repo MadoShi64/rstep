@@ -28,7 +28,8 @@
 #' }
 #'
 #'
-gen_step_xlsx = function(filepath=NULL,filename){
+gen_step_xlsx = function(filepath=NULL,
+                         filename){
   if (filename == "dat"){
     write.xlsx(dat,paste0(filepath,"/",filename,".xlsx"))
   }

@@ -25,7 +25,11 @@
 #' }
 #'
 #'
-write_step_out = function(file.name,workspace,state.date,end.date,format="csv"){
+write_step_out = function(file.name,
+                          workspace,
+                          state.date,
+                          end.date,
+                          format="csv"){
 
   Output = NULL
   for (i in state.date:end.date){

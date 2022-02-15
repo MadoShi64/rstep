@@ -23,7 +23,10 @@
 #'
 #'
 #'
-step_plot = function(dataframe,varname,type,obs=TRUE){
+step_plot = function(dataframe,
+                     varname,
+                     type,
+                     obs=TRUE){
   #library(lubridate)
   #require(ggplot2)
   #library(tidyr)

@@ -22,8 +22,11 @@
 #                 state.date = 12,end.date = 20,isite = "S02")
 #' }
 #'
-gen_step_file = function(filepath,filename,
-                         state.date,end.date,isite){
+gen_step_file = function(filepath,
+                         filename,
+                         state.date,
+                         end.date,
+                         isite){
   if(filename=="dat"){
     data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
     myfile <- file.path(paste0(filepath,"/",isite,"/","pluri",'.', filename))

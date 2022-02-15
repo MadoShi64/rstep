@@ -15,7 +15,8 @@
 #' }
 #'
 #'
-clean_out_dir=function(new_outpath,old_outpath){
+clean_out_dir=function(new_outpath,
+                       old_outpath){
   #move folders from new dir to old dir
   current_files = list.files(new_outpath, full.names = TRUE)
   file.copy(from = current_files, to = old_outpath, overwrite = TRUE, recursive = TRUE, copy.mode = TRUE)

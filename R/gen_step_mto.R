@@ -32,7 +32,13 @@
 #' year = "12",alt=308,lat=15.4,hautmes=2)
 #' }
 #'
-gen_step_mto <- function(workspace,dataframe,isite,year,alt,lat,hautmes){
+gen_step_mto <- function(workspace,
+                         dataframe,
+                         isite,
+                         year,
+                         alt,
+                         lat,
+                         hautmes){
   mylist <- list() #create an empty list
   if(nrow(dataframe)==365){     #Normal year (February : 28 days)
     for (i in 3:ncol(dataframe)){

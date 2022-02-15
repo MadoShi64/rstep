@@ -33,7 +33,13 @@
 #' }
 #'
 #'
-step_Dbarplot = function(dataframe,file.name,filepath,varname,fun,ylab=NULL,errorbar=FALSE){
+step_Dbarplot = function(dataframe,
+                         file.name,
+                         filepath,
+                         varname,
+                         fun,
+                         ylab=NULL,
+                         errorbar=FALSE){
   df_in1 <-read_excel(paste0(filepath,"/",file.name,'.xlsx'))
   df1 <- cbind(dataframe,df_in1[,2])
   names(df1)[names(df1) == "df_in1[, 2]"] <- "Season"
