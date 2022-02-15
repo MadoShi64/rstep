@@ -30,14 +30,14 @@ step_var_info = function (keyword){
                                            "Bmlita : biomass of litter (gMS.m-2)",
                                            "Psife : leaf potential (bars)",
                                            "Rstoe : stomatal resistance (s.cm-1)",
-                                           "REspCv : growth respiration (g.m-2)",
-                                           "REspEv : maintenance respiration (g.m-2)",
+                                           "REspCv : growth respiration (gMS.m-2)",
+                                           "REspEv : maintenance respiration (gMS.m-2)",
                                            "Psi(1) : soil water potential layer1 (bars)",
                                            "Psi(2) : soil water potential layer2 (bars)",
                                            "Psi(3) : soil water potential layer3 (bars)",
                                            "BMr : root biomass (gMS.m-2)",
-                                           "RespCr : roots growth respiration (g.m-2)",
-                                           "RespEr : roots maintenance respiration (g.m-2)",
+                                           "RespCr : roots growth respiration (gMS.m-2)",
+                                           "RespEr : roots maintenance respiration (gMS.m-2)",
                                            "a : allocation coefficient",
                                            "BMrs : dry root biomass (gMS.m-2)",
                                            "Epsiloni : interception of Photosynthetically Active Radiation (PAR)",
@@ -138,7 +138,9 @@ step_var_info = function (keyword){
                                            "fsj : rate of bare soil ",
                                            "vcft : total groung cover",
                                            "Etr : relative evapotranspiration (m2.m-2)",
-                                           "CO2Soil : Microbial Respiration (gC.m-2)"
+                                           "CO2Soil : Microbial Respiration (gC.m-2)",
+                                           "SoilResp : Soil respiration = Microbial respiration + root respiration (gC.m-2)",
+                                           "Reco : Ecosystem respiration = Soil respiration + aboveground plant respiration (gC.m-2)"
 
   ))
   var = df$step_output_variables[grep(keyword,df$step_output_variables)]

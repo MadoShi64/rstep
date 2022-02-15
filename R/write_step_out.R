@@ -64,6 +64,8 @@ write_step_out = function(file.name,workspace,state.date,end.date,format="csv"){
   Output1$Etr <- Output1$Trtot + Output1$Etot               #actual evapotranspiration (etr)
   Output1$vcft <- Output1$vcfv+Output1$vcfs+Output1$vcfl  # total ground cover
   Output1$CO2Soil <- Output1$Co2S/2
+  Output1$SoilResp <- (Output1$Co2S/2)+ (Output1$RespCr/2) + (Output1$RespEr/2)
+  Output1$Reco <-  (Output1$Co2S/2) + (Output1$RespCr/2) + (Output1$RespEr/2)+ (Output1$REspCv/2) + (Output1$REspEv/2)
 
   #Output2$fsjposi<-ifelse(Output1$fsj<0,0.01,Output2$fsj) #if fsj<0 print 0.01 else fsj
 
