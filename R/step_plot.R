@@ -63,7 +63,8 @@ step_plot = function(dataframe,
                 panel.grid.minor = element_blank(), # eliminate minor grids
                 text = element_text(family="serif"),
                 axis.title.x = element_text(size = 10, face = "bold", color="black"),
-                legend.position = "bottom"
+                legend.position = "bottom",
+                legend.title = element_blank()
           )
 
       }else{
@@ -84,7 +85,8 @@ step_plot = function(dataframe,
                 panel.grid.minor = element_blank(), # eliminate minor grids
                 text = element_text(family="serif"),
                 axis.title.x = element_text(size = 10, face = "bold", color="black"),
-                legend.position = "bottom"
+                legend.position = "bottom",
+                legend.title = element_blank()
           )
       }
     }else{
