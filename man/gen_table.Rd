@@ -4,7 +4,7 @@
 \alias{gen_table}
 \title{Generate dataframe for processing}
 \usage{
-gen_table(filepath, workspace, filename, sim_variables, obs = TRUE)
+gen_table(filepath, workspace, filename, sim_variables, obs = F, test0 = F)
 }
 \arguments{
 \item{filepath}{path of the files obs_data.xlsx and test0_data.xlsx.
@@ -18,7 +18,9 @@ output file you are processing}
 \item{sim_variables}{names of the variables you want to process
 e.g. sim_variables = c("Rain","CO2Soil","Shum_1_per")}
 
-\item{obs}{notify whether or not you have observation data of the variables of interest}
+\item{obs}{notify whether or not you have observation data of the variables of interest (if the file "obs_data.xlsx" is present in filepath's folder)}
+
+\item{test0}{notify whether or not you want to process data from a previous simulation (if the file "test0_data.xlsx" is present in filepath's folder)}
 }
 \value{
 a dataframe of the variables of interest. the observation data and the result
@@ -30,7 +32,7 @@ gen_table generates dataframe to process selected variables
 \examples{
 \dontrun{
 gen_table(filepath = filepath,workspace = workspace,filename = "Dahra",
-sim_variables = sim_variables,obs=TRUE)
+sim_variables = sim_variables,obs=T,test0=F)
 }
 
 

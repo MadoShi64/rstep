@@ -55,13 +55,16 @@ step_plot = function(dataframe,
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
           scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-          theme_classic()+
           ylab(names(dataframe[varname]))+xlab(names(dataframe[1]))+
-          theme(panel.background = element_rect(fill = "white"),
-                legend.title=element_blank(),legend.text=element_text(size=9,face = "italic"),
-                axis.text = element_text(colour = "black"),
-                #legend.position = c(0.25, 0.52),
-                legend.background = element_rect(fill="transparent"))
+          theme_bw() + # eliminate default background
+          theme(panel.grid.major = element_blank(), # eliminate major grids
+                axis.text.x = element_text(size = 10, face = "bold", color="black"),
+                axis.title.y = element_text(size = 10, face = "bold", color="black"),
+                panel.grid.minor = element_blank(), # eliminate minor grids
+                text = element_text(family="serif"),
+                axis.title.x = element_text(size = 10, face = "bold", color="black"),
+                legend.position = "none"
+          )
 
       }else{
         df2 <- dataframe %>%
@@ -73,12 +76,16 @@ step_plot = function(dataframe,
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
           scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-          theme_classic()+ylab(varname)+xlab("Date")+
-          theme(panel.background = element_rect(fill = "white"),
-                legend.title=element_blank(),legend.text=element_text(size=9,face = "italic"),
-                axis.text = element_text(colour = "black"),
-                #legend.position = c(0.25, 0.52),
-                legend.background = element_rect(fill="transparent"))
+          ylab(varname)+xlab("Date")+
+          theme_bw() + # eliminate default background
+          theme(panel.grid.major = element_blank(), # eliminate major grids
+                axis.text.x = element_text(size = 10, face = "bold", color="black"),
+                axis.title.y = element_text(size = 10, face = "bold", color="black"),
+                panel.grid.minor = element_blank(), # eliminate minor grids
+                text = element_text(family="serif"),
+                axis.title.x = element_text(size = 10, face = "bold", color="black"),
+                legend.position = "none"
+          )
       }
     }else{
       df2 <- df %>%
