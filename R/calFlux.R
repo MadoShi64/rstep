@@ -69,3 +69,51 @@ cal_pvap_hPa = function (relative_humidity,
   y = (relative_humidity/100)*(6.11*exp((17.27*mean_temperature) / (237.3 + mean_temperature)))
   return(y)
 }
+
+
+#' Convert flux data to CO2 equivalent
+#'
+#' @param x  flux data in CO2-C or CH4-C or N2O-N
+#' @param Gas unit of the gas CO2-C or CH4-C or N2O-N
+#'
+#' @description CH4 and N2O emissions rates can be converted to CO2 equivalents using the ‘100-yr global warming potential’ factors as follows:
+#' 1 kg N2O = 298 kg CO2 equivalents. 1 kg CH4 = 25 kg CO2 equivalents.
+#' Please note that, according the most recent IPCC report (IPCC, 2013),
+#' the conversion of CH4 into CO2eq. should be:  1 kg CH4 = 34 kg CO2 equivalents
+#' Reference cited: IPCC (2013) Climate change 2013: the physical science basis. Intergovernmental Panel on Climate Change. Available at https://www.ipcc.ch/report/ar5/wg1/
+#' "1 kg CH4-C = (16/12)x1 kg CH4 = 1.33 kg CH4". "1 kg CO2-C = (44/12)x1 kg CO2 =3.67 kg CO2". "1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O"
+#'
+#'
+#' @return flux value in CO2 equivalent
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' CO2equi(0.6,Gas="N2O-N")
+#' }
+#'
+CO2equi = function (x,
+                    Gas){
+  # 1 kg CH4-C = (16/12)*1 kg CH4 = 1.33 kg CH4
+  # 1 kg CO2-C = (44/12)*1 kg CO2 =3.67 kg CO2
+  # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O
+  # CH4 and N2O emissions rates can be converted to CO2 equivalents using the ‘100-yr global warming potential’ factors as follows:
+  #   1 kg N2O = 298 kg CO2 equivalents
+  # 1 kg CH4 = 25 kg CO2 equivalents
+  # Please note that, according the most recent IPCC report (IPCC, 2013), the conversion of CH4 into CO2eq. should be:
+  #   1 kg CH4 = 34 kg CO2 equivalents
+  # Reference cited:
+  #   IPCC (2013) Climate change 2013: the physical science basis. Intergovernmental Panel on Climate Change. Available at https://www.ipcc.ch/report/ar5/wg1/
+  if (Gas == "CH4-C"){
+    y = x* 1.33 * 34
+    return(y)
+  }
+  if (Gas == "CO2-C"){
+    y = x* 3.67 * 1
+    return(y)
+  }
+  if (Gas == "N2O-N"){
+    y = x* 1.57 * 298
+    return(y)
+  }
+}
