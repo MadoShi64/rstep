@@ -50,8 +50,8 @@ step_plot = function(dataframe,
         select(Date,all_of(var)) %>%
         gather(key = "variable", value = "value", -Date)
       ggplot(df2, aes(x=ymd(Date),y=value,colour=variable))+
-        geom_line(data=subset(df2,variable == paste0(varname,".simu")),linetype = "solid", size = 0.8)+
         geom_point(data=subset(df2,variable == varname))+
+        geom_line(data=subset(df2,variable == paste0(varname,".simu")),linetype = "solid", size = 0.8)+
         scale_color_manual(labels = c("Observation","Simulation"),
                            values = c("black","peru")) +
         #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
