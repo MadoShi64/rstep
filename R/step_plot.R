@@ -3,7 +3,7 @@
 #'
 #' @param dataframe the name of the dataframe generated with the function gen_table
 #' @param varname the name of the STEP variable
-#' @param type the type of plot you want "dynamic time series or a scatter plot)
+#' @param type the type of dynamic plot you want "line or point)
 #' @param obs notify whether or not you want to display the observations alongside
 #'
 #' @description step_plot displays a dynamic plot or a scatter plot for selected step variable
@@ -18,24 +18,35 @@
 #'
 #' @examples
 #' \dontrun{
-#' step_plot(dataframe = df, varname = "Etr",type="dynamic",obs=TRUE)
+#' step_plot(dataframe = df, varname = "Etr",type="line",obs=TRUE)
 #' }
 #'
 #'
 #'
 step_plot = function(dataframe,
                      varname,
-                     type,
+                     type=NULL,
                      obs=TRUE){
 
-  if (type=="scatter"){
-    ggplot(dataframe, aes(y=dataframe[,paste0(varname,".simu")], x=dataframe[,varname]))+geom_point(alpha = 0.9,size=2)+
-      geom_smooth(colour="red", method="lm", fill="white",size=1.25) +
-      ylab(paste0(varname," simulated"))+
-      xlab(paste0(varname, " observed")) +
-      #theme_classic()+
-      theme(axis.text = element_text(colour = "black")) +
-      geom_abline(intercept=0, slope=1, colour = "blue", linetype = "dashed")
+  if (type=="point"){
+    df2 <- df %>%
+      select(Date,all_of(varname)) %>%
+      gather(key = "variable", value = "value", -Date)
+    ggplot(df2, aes(x = ymd(Date), y=value)) +
+      #geom_line(aes(color = variable), size = 0.65)+
+      geom_point(aes(color = variable))+
+      scale_color_manual(values="peru")+
+      #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
+      ylab(names(dataframe[varname]))+xlab("Date")+
+      theme_bw() + # eliminate default background
+      theme(panel.grid.major = element_blank(), # eliminate major grids
+            panel.grid.minor = element_blank(), # eliminate minor grids
+            text = element_text(family="serif"),
+            axis.title.x = element_text(size = 10, face = "bold", color="black"),
+            axis.text.x = element_text(size = 10, face = "bold", color="black"),
+            axis.title.y = element_text(size = 10, face = "bold", color="black"),
+            legend.position = "none"
+      )
   }else{
     if (obs == TRUE){
       dataframe = dataframe[,c("Date",varname,paste0(varname,".simu"))]
@@ -91,6 +102,7 @@ step_plot = function(dataframe,
         gather(key = "variable", value = "value", -Date)
       ggplot(df2, aes(x = ymd(Date), y=value)) +
         geom_line(aes(color = variable), size = 0.65)+
+        #geom_point(aes(color = variable))+
         scale_color_manual(values="peru")+
         #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
         ylab(names(dataframe[varname]))+xlab("Date")+
