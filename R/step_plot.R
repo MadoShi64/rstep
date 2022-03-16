@@ -38,6 +38,7 @@ step_plot = function(dataframe,
       scale_color_manual(values="peru")+
       #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
       ylab(names(dataframe[varname]))+xlab("Date")+
+      #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
       theme_bw() + # eliminate default background
       theme(panel.grid.major = element_blank(), # eliminate major grids
             panel.grid.minor = element_blank(), # eliminate minor grids
@@ -64,6 +65,7 @@ step_plot = function(dataframe,
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
           ylab(names(dataframe[varname]))+xlab(names(dataframe[1]))+
           theme_bw() + # eliminate default background
+          scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
           theme(panel.grid.major = element_blank(), # eliminate major grids
                 axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
@@ -86,6 +88,7 @@ step_plot = function(dataframe,
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
           ylab(varname)+xlab("Date")+
           theme_bw() + # eliminate default background
+          #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
           theme(panel.grid.major = element_blank(), # eliminate major grids
                 axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
@@ -107,6 +110,7 @@ step_plot = function(dataframe,
         #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
         ylab(names(dataframe[varname]))+xlab("Date")+
         theme_bw() + # eliminate default background
+        scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
         theme(panel.grid.major = element_blank(), # eliminate major grids
               panel.grid.minor = element_blank(), # eliminate minor grids
               text = element_text(family="serif"),
