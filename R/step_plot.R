@@ -25,8 +25,8 @@
 #'
 step_plot = function(dataframe,
                      varname,
-                     type=NULL,
-                     obs=TRUE){
+                     type="dynamic",
+                     obs=F){
 
   if (type=="point"){
     df2 <- df %>%
