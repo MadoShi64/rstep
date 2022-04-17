@@ -67,9 +67,9 @@ write_step_out = function(file.name,
   Output1$fsj <- 1-Output1$vcfv-Output1$vcfs-Output1$vcfl            #ground cover (fsj)
   Output1$Etr <- Output1$Trtot + Output1$Etot               #actual evapotranspiration (etr)
   Output1$vcft <- Output1$vcfv+Output1$vcfs+Output1$vcfl  # total ground cover
-  Output1$CO2Soil <- Output1$Co2S/2
-  Output1$SoilResp <- (Output1$Co2S/2)+ (Output1$RespCr/2) + (Output1$RespEr/2)+(Output1$REspCPr/2)+(Output1$REspEPr/2)
-  Output1$Reco <-  (Output1$Co2S/2) + (Output1$RespCr/2) + (Output1$RespEr/2)+ (Output1$REspCv/2) + (Output1$REspEv/2)+(Output1$REspCPv/2)+(Output1$REspEPv/2)+(Output1$REspCPr/2)+(Output1$REspEPr/2)
+  Output1$CO2Soil <- Output1$Co2S*0.5
+  Output1$SoilResp <- (Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5)
+  Output1$Reco <-  (Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5)
 
   #Output2$fsjposi<-ifelse(Output1$fsj<0,0.01,Output2$fsj) #if fsj<0 print 0.01 else fsj
 
