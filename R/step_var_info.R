@@ -140,7 +140,9 @@ step_var_info = function (keyword){
                                            "Etr : relative evapotranspiration (m2.m-2)",
                                            "CO2Soil : Microbial Respiration (gC.m-2)",
                                            "SoilResp : Soil respiration = Microbial respiration + root respiration (gC.m-2)",
-                                           "Reco : Ecosystem respiration = Soil respiration + aboveground plant respiration (gC.m-2)"
+                                           "Reco : Ecosystem respiration = Soil respiration + aboveground plant respiration (gC.m-2)",
+                                           "BMt : Total biomass (Green + dry + litter) (gMS.m-2)",
+                                           "BMv_s : Biomass (Green + dry) (gMS.m-2)"
 
   ))
   var = df$step_output_variables[grep(keyword,df$step_output_variables)]
