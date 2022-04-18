@@ -59,16 +59,17 @@ write_step_out = function(file.name,
   df <- data.frame(Date)
   #add date column to Output data frame
   Output1 <- cbind(df,Output)
+  attach(Output1)
 
-  Output1$Shum_0_per <- try((100*Shum_0) / 20)   #Shum0: 20 mm depth
-  Output1$Shum_1_per <- try((100*Shum_1) / 280)   #Shum1: 280 mm depth
-  Output1$Shum_2_per <- try((100*Shum_2) / 700)   #Shum2: 700 mm depth
-  Output1$Shum_3_per <- try((100*Shum_3) / 2000)  #Shum3: 2000 mm depth
+  Output1$Shum_0_per <- try((100*Output1$Shum_0) / 20)   #Shum0: 20 mm depth
+  Output1$Shum_1_per <- try((100*Output1$Shum_1) / 280)   #Shum1: 280 mm depth
+  Output1$Shum_2_per <- try((100*Output1$Shum_2) / 700)   #Shum2: 700 mm depth
+  Output1$Shum_3_per <- try((100*Output1$Shum_3) / 2000)  #Shum3: 2000 mm depth
   Output1$fsj <- try(1-Output1$vcfv-Output1$vcfs-Output1$vcfl )           #ground cover (fsj)
-  Output1$Etr <- try(Trtot + Etot)               #actual evapotranspiration (etr)
-  Output1$vcft <- try(vcfv+vcfs+vcfl)  # total ground cover
-  Output1$BMv_s <- try(BMs+BMv)
-  Output1$BMt <- try(BMs+BMv+Bmlita)
+  Output1$Etr <- try(Output1$Trtot + Output1$Etot)               #actual evapotranspiration (etr)
+  Output1$vcft <- try(Output1$vcfv+Output1$vcfs+Output1$vcfl)  # total ground cover
+  Output1$BMv_s <- try(Output1$BMs+Output1$BMv)
+  Output1$BMt <- try(Output1$BMs+Output1$BMv+Output1$Bmlita)
   Output1$SoilResp <- try((Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5))
   Output1$CO2Soil <- try(Output1$Co2S*0.5)
   Output1$SoilResp <- try((Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5))
