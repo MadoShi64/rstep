@@ -72,7 +72,6 @@ write_step_out = function(file.name,
   Output1$BMt <- try(Output1$BMs+Output1$BMv+Output1$Bmlita)
   Output1$SoilResp <- try((Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5))
   Output1$CO2Soil <- try(Output1$Co2S*0.5)
-  Output1$SoilResp <- try((Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5))
   Output1$Reco <-  try((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$REspCPr*0.5)+(Output1$REspEPr*0.5))
 
 
