@@ -65,14 +65,13 @@ write_step_out = function(file.name,
   Output1$Shum_1_per <- try((100*Shum_1) / 280)   #Shum1: 280 mm depth
   Output1$Shum_2_per <- try((100*Shum_2) / 700)   #Shum2: 700 mm depth
   Output1$Shum_3_per <- try((100*Shum_3) / 2000)  #Shum3: 2000 mm depth
-  Output1$fsj <- try(1-vcfv-vcfs-vcfl )           #ground cover (fsj)
   Output1$Etr <- try(Trtot + Etot)               #actual evapotranspiration (etr)
   Output1$vcft <- try(vcfv+vcfs+vcfl)  # total ground cover
   Output1$BMv_s <- try(BMs+BMv)
   Output1$BMt <- try(BMs+BMv+Bmlita)
-  Output1$SoilResp <- try((Co2S*0.5)+ (RespCr*0.5) + (RespEr*0.5)+(REspCPr*0.5)+(REspEPr*0.5))
+  Output1$SoilResp <- try((Co2S*0.5)+ (RespCr*0.5) + (RespEr*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
   Output1$CO2Soil <- try(Co2S*0.5)
-  Output1$Reco <-  try((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(REspCPr*0.5)+(REspEPr*0.5))
+  Output1$Reco <-  try((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
 
 
   #Output2$fsjposi<-ifelse(Output1$fsj<0,0.01,Output2$fsj) #if fsj<0 print 0.01 else fsj
