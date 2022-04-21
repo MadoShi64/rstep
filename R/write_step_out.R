@@ -77,6 +77,7 @@ write_step_out = function(file.name,
   Output1$N2Odenit_kg_ha  <- try(En2o_NOE/1160)-(N2OFlux_Process/365)
   Output1$N2Onit_kg_ha  <- try(N2OFlux_Process/365)
   Output1$N2O_total_kg_ha  <- try(En2o_NOE/1160)
+  Output1$N2O_total_t_ha  <- try((En2o_NOE/1160)*0.001)
 
   # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O and 1 kg N2O = 298 kg CO2 equivalents !(IPCC, 2013)
   Output1$N2O_total_kg_CO2_equiv_ha  <- try((En2o_NOE/1160)*1.57*298)
