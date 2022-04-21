@@ -60,7 +60,7 @@ step_barplot = function(dataframe,
       geom_text(aes(label=mean), vjust=1.6, color="black", position = position_dodge(1.5), size=3)+
 
       labs(x = "Year",
-           y = paste0(varname,"[annual mean]")) +
+           y = paste0(varname," [annual mean]")) +
       theme_bw() + # eliminate default background
       theme(panel.grid.major = element_blank(), # eliminate major grids
             panel.grid.minor = element_blank(), # eliminate minor grids
@@ -83,7 +83,7 @@ step_barplot = function(dataframe,
       geom_bar(stat="identity", position=position_dodge()) +
       geom_text(aes(label=sum), vjust=1.6, color="black", position = position_dodge(1.5), size=3)+
 
-      labs(x = "Year", y = paste0(varname,"[annual sum]")) +
+      labs(x = "Year", y = paste0(varname," [annual sum]")) +
       theme_bw() + # eliminate default background
       theme(panel.grid.major = element_blank(), # eliminate major grids
             panel.grid.minor = element_blank(), # eliminate minor grids
