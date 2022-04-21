@@ -142,7 +142,9 @@ step_var_info = function (keyword){
                                            "SoilResp : Soil respiration = Microbial respiration + root respiration (gC.m-2)",
                                            "Reco : Ecosystem respiration = Soil respiration + aboveground plant respiration (gC.m-2)",
                                            "BMt : Total biomass (Green + dry + litter) (gMS.m-2)",
-                                           "BMv_s : Biomass (Green + dry) (gMS.m-2)"
+                                           "BMv_s : Biomass (Green + dry) (gMS.m-2)",
+                                           "N2Odenit_kg_ha : total amount of N2O emitted from soil by nitrification and denitrification (kg.ha-1.d-1)",
+                                           "N2Onit_kg_ha : daily amount of N20 emitted from soil by mineralisation/nitrification  (kgN.ha-1.d-1)"
 
   ))
   var = df$step_output_variables[grep(keyword,df$step_output_variables)]

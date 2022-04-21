@@ -72,7 +72,8 @@ write_step_out = function(file.name,
   Output1$SoilResp <- try((Co2S*0.5)+ (RespCr*0.5) + (RespEr*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
   Output1$CO2Soil <- try(Co2S*0.5)
   Output1$Reco <-  try((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
-
+  Output1$N2Odenit_kg_ha = (En2o_NOE/1160)-(N2OFlux_Process/365)
+  Output1$N2Onit_kg_ha = (N2OFlux_Process/365)
 
   #Output2$fsjposi<-ifelse(Output1$fsj<0,0.01,Output2$fsj) #if fsj<0 print 0.01 else fsj
 
