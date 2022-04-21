@@ -141,10 +141,17 @@ step_var_info = function (keyword){
                                            "CO2Soil : Microbial Respiration (gC.m-2)",
                                            "SoilResp : Soil respiration = Microbial respiration + root respiration (gC.m-2)",
                                            "Reco : Ecosystem respiration = Soil respiration + aboveground plant respiration (gC.m-2)",
+                                           "Reco_t_ha : Ecosystem respiration = Soil respiration + aboveground plant respiration (tC.ha-1)",
                                            "BMt : Total biomass (Green + dry + litter) (gMS.m-2)",
+                                           "BMt_t_ha : Total biomass (Green + dry + litter) (tMS.ha-1)",
                                            "BMv_s : Biomass (Green + dry) (gMS.m-2)",
-                                           "N2Odenit_kg_ha : total amount of N2O emitted from soil by nitrification and denitrification (kg.ha-1.d-1)",
-                                           "N2Onit_kg_ha : daily amount of N20 emitted from soil by mineralisation/nitrification  (kgN.ha-1.d-1)"
+                                           "N2Odenit_kg_ha : daily amount of N2O emitted from soil by denitrification (kg.ha-1.d-1)",
+                                           "N2Onit_kg_ha : daily amount of N20 emitted from soil by mineralisation/nitrification  (kgN.ha-1.d-1)",
+                                           "N2O_total_kg_ha : total amount of N2O emitted from soil by nitrification and denitrification (kg.ha-1.d-1)",
+                                           "N2O_total_kg_CO2_equiv_ha : total amount of N2O emitted from soil by nitrification and denitrification (kgCO2.eq.ha)",
+                                           "N2O_total_t_CO2_equiv_ha : total amount of N2O emitted from soil by nitrification and denitrification (tCO2.eq.ha)",
+                                           "Reco_t_CO2_ha : Ecosystem respiration = Soil respiration + aboveground plant respiration (tCO2.ha-1)",
+                                           "GHG_t_CO2_equiv_ha : Total GHG (N2O & CO2) budget in (tCO2.eq.ha)"
 
   ))
   var = df$step_output_variables[grep(keyword,df$step_output_variables)]
