@@ -24,7 +24,7 @@ step_var_info = function (keyword){
                                            " Shum_3 : soil moisture layer3 [100-300cm] (mm.d-1)",
                                            "Etot : evaporation (mm.d-1)",
                                            "Trtot : transpiration (mm.d-1)",
-                                           "PST : photosynthese totale (g.m-2)",
+                                           "PST : photosynthese totale (gMS/m2)",
                                            "BMs : dry biomass (gMS.m-2)",
                                            "BMv : green biomass (gMS.m-2)",
                                            "Bmlita : biomass of litter (gMS.m-2)",
@@ -152,7 +152,8 @@ step_var_info = function (keyword){
                                            "N2O_total_kg_CO2_equiv_ha : total amount of N2O emitted from soil by nitrification and denitrification (kgCO2.eq.ha)",
                                            "N2O_total_t_CO2_equiv_ha : total amount of N2O emitted from soil by nitrification and denitrification (tCO2.eq.ha)",
                                            "Reco_t_CO2_ha : Ecosystem respiration = Soil respiration + aboveground plant respiration (tCO2.ha-1)",
-                                           "GHG_t_CO2_equiv_ha : Total GHG (N2O & CO2) budget in (tCO2.eq.ha)"
+                                           "GHG_t_CO2_equiv_ha : Total GHG (N2O & CO2) budget in (tCO2.eq.ha)",
+                                           "GPP : gross primary production (gC/m2)"
 
   ))
   var = df$step_output_variables[grep(keyword,df$step_output_variables)]
