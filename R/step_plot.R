@@ -25,7 +25,8 @@
 #'
 step_plot = function(dataframe,
                      varname,
-                     type="dynamic",
+                     unit=NULL,
+                     type="line",
                      obs=F){
 
   if (type=="point"){
@@ -37,7 +38,7 @@ step_plot = function(dataframe,
       geom_point(aes(color = variable))+
       scale_color_manual(values="peru")+
       #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-      ylab(names(dataframe[varname]))+xlab("Date")+
+      ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
       #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
       theme_bw() + # eliminate default background
       theme(panel.grid.major = element_blank(), # eliminate major grids
@@ -63,7 +64,7 @@ step_plot = function(dataframe,
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-          ylab(names(dataframe[varname]))+xlab(names(dataframe[1]))+
+          ylab(paste0(names(dataframe[varname])," ",unit))+xlab(names(dataframe[1]))+
           theme_bw() + # eliminate default background
           scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
           theme(panel.grid.major = element_blank(), # eliminate major grids
@@ -86,7 +87,7 @@ step_plot = function(dataframe,
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-          ylab(varname)+xlab("Date")+
+          ylab(paste0(varname)," ",unit)+xlab("Date")+
           theme_bw() + # eliminate default background
           #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
           theme(panel.grid.major = element_blank(), # eliminate major grids
@@ -108,7 +109,7 @@ step_plot = function(dataframe,
         #geom_point(aes(color = variable))+
         scale_color_manual(values="peru")+
         #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-        ylab(names(dataframe[varname]))+xlab("Date")+
+        ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
         theme_bw() + # eliminate default background
         scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
         theme(panel.grid.major = element_blank(), # eliminate major grids

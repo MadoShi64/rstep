@@ -4,7 +4,7 @@
 \alias{step_plot}
 \title{Dynamic and scatter plots for selected variables}
 \usage{
-step_plot(dataframe, varname, type = "dynamic", obs = F)
+step_plot(dataframe, varname, unit = NULL, type = "line", obs = F)
 }
 \arguments{
 \item{dataframe}{the name of the dataframe generated with the function gen_table}
