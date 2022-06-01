@@ -29,7 +29,7 @@ step_plot = function(dataframe,
                      obs=F){
 
   if (type=="point"){
-    df2 <- df %>%
+    df2 <- dataframe %>%
       select(Date,all_of(varname)) %>%
       gather(key = "variable", value = "value", -Date)
     ggplot(df2, aes(x = ymd(Date), y=value)) +
@@ -100,7 +100,7 @@ step_plot = function(dataframe,
           )
       }
     }else{
-      df2 <- df %>%
+      df2 <- dataframe %>%
         select(Date,all_of(varname)) %>%
         gather(key = "variable", value = "value", -Date)
       ggplot(df2, aes(x = ymd(Date), y=value)) +
