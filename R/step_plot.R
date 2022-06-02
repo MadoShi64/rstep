@@ -5,6 +5,7 @@
 #' @param varname the name of the STEP variable
 #' @param type the type of dynamic plot you want "line or point)
 #' @param obs notify whether or not you want to display the observations alongside
+#' @param unit the variable
 #'
 #' @description step_plot displays a dynamic plot or a scatter plot for selected step variable
 #'
@@ -87,7 +88,7 @@ step_plot = function(dataframe,
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
-          ylab(paste0(varname)," ",unit)+xlab("Date")+
+          ylab(paste0((varname)," ",unit))+xlab("Date")+
           theme_bw() + # eliminate default background
           #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
           theme(panel.grid.major = element_blank(), # eliminate major grids

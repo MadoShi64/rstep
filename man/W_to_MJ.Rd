@@ -15,7 +15,7 @@ W_to_MJ(x, unit)
 global radiation in MJ
 }
 \description{
-Global radiation from W to MJ
+W_to_MJ convert radiation from W to MJ
 }
 \examples{
 \dontrun{

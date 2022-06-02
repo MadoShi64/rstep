@@ -11,6 +11,8 @@ step_plot(dataframe, varname, unit = NULL, type = "line", obs = F)
 
 \item{varname}{the name of the STEP variable}
 
+\item{unit}{the variable}
+
 \item{type}{the type of dynamic plot you want "line or point)}
 
 \item{obs}{notify whether or not you want to display the observations alongside}

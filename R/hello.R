@@ -12,5 +12,6 @@
 #'
 #'
 hello <- function(x) {
+  Sys.setenv(TZ = "GMT")
   print(paste("Hello ",x, ", this is the world!"))
 }

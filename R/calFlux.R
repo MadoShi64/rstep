@@ -6,6 +6,8 @@
 #' @param x global radiation in W
 #' @param unit time step (e.g. "hour" for MJ/hr, "day", "min", "quarter", "sec", "half")
 #'
+#' @description W_to_MJ convert radiation from W to MJ
+#'
 #' @return global radiation in MJ
 #' @export
 #'
@@ -46,28 +48,6 @@ W_to_MJ=function (x,
     y = (x*1800)/1000000
     return(y)
   }
-}
-
-
-
-#' Title Compute vapor pressure (hPa)
-#'
-#' @param relative_humidity relative humidity in %
-#' @param mean_temperature mean temperature in deg C
-#'
-#' @return vapor pressure in hPa
-#' @export
-#'
-#' @examples
-#' \dontrun{
-#' cal_pvap_hPa(57,20)
-#' }
-#'
-cal_pvap_hPa = function (relative_humidity,
-                         mean_temperature){
-  #compute vapor pressure (hPa) from relative humidity(%) and mean temperature (degC)
-  y = (relative_humidity/100)*(6.11*exp((17.27*mean_temperature) / (237.3 + mean_temperature)))
-  return(y)
 }
 
 
@@ -117,3 +97,4 @@ CO2equi = function (x,
     return(y)
   }
 }
+

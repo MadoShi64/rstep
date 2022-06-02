@@ -59,40 +59,39 @@ write_step_out = function(file.name,
   df <- data.frame(Date)
   #add date column to Output data frame
   Output1 <- cbind(df,Output)
-  attach(Output1)
 
-  Output1$Shum_0_per <- try((100*Shum_0) / 20)   #Shum0: 20 mm depth
-  Output1$Shum_1_per <- try((100*Shum_1) / 280)   #Shum1: 280 mm depth
-  Output1$Shum_2_per <- try((100*Shum_2) / 700)   #Shum2: 700 mm depth
-  Output1$Shum_3_per <- try((100*Shum_3) / 2000)  #Shum3: 2000 mm depth
-  Output1$Etr <- try(Trtot + Etot)               #actual evapotranspiration (etr)
-  Output1$vcft <- try(vcfv+vcfs+vcfl)  # total ground cover
-  Output1$BMv_s <- try(BMs+BMv)
-  Output1$BMt <- try(BMs+BMv+Bmlita)
-  Output1$BMt_t_ha <- try((BMs+BMv+Bmlita)*0.01)
-  Output1$SoilResp <- try((Co2S*0.5)+ (RespCr*0.5) + (RespEr*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
-  Output1$CO2Soil <- try(Co2S*0.5)
-  Output1$Reco <-  try((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))
-  Output1$Reco_t_ha  <- try(((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))*0.01)
-  Output1$N2Odenit_kg_ha  <- try(En2o_NOE/1160)-(N2OFlux_Process/365)
-  Output1$N2Onit_kg_ha  <- try(N2OFlux_Process/365)
-  Output1$N2O_total_kg_ha  <- try(En2o_NOE/1160)
-  Output1$N2O_total_t_ha  <- try((En2o_NOE/1160)*0.001)
+  Output1$Shum_0_per <- try((100*Output1$Shum_0) / 20)   #Shum0: 20 mm depth
+  Output1$Shum_1_per <- try((100*Output1$Shum_1) / 280)   #Shum1: 280 mm depth
+  Output1$Shum_2_per <- try((100*Output1$Shum_2) / 700)   #Shum2: 700 mm depth
+  Output1$Shum_3_per <- try((100*Output1$Shum_3) / 2000)  #Shum3: 2000 mm depth
+  Output1$Etr <- try(Output1$Trtot + Output1$Etot)               #actual evapotranspiration (etr)
+  Output1$vcft <- try(Output1$vcfv+Output1$vcfs+Output1$vcfl)  # total ground cover
+  Output1$BMv_s <- try(Output1$BMs+Output1$BMv)
+  Output1$BMt <- try(Output1$BMs+Output1$BMv+Output1$Bmlita)
+  Output1$BMt_t_ha <- try((Output1$BMs+Output1$BMv+Output1$Bmlita)*0.01)
+  Output1$SoilResp <- try((Output1$Co2S*0.5)+ (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))
+  Output1$CO2Soil <- try(Output1$Co2S*0.5)
+  Output1$Reco <-  try((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))
+  Output1$Reco_t_ha  <- try(((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01)
+  Output1$N2Odenit_kg_ha  <- try(Output1$En2o_NOE/1160)-(Output1$N2OFlux_Process/365)
+  Output1$N2Onit_kg_ha  <- try(Output1$N2OFlux_Process/365)
+  Output1$N2O_total_kg_ha  <- try(Output1$En2o_NOE/1160)
+  Output1$N2O_total_t_ha  <- try((Output1$En2o_NOE/1160)*0.001)
 
   # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O and 1 kg N2O = 298 kg CO2 equivalents !(IPCC, 2013)
-  Output1$N2O_total_kg_CO2_equiv_ha  <- try((En2o_NOE/1160)*1.57*298)
+  Output1$N2O_total_kg_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*298)
 
   # 1kg/ha = 0.001 t/ha
-  Output1$N2O_total_t_CO2_equiv_ha  <- try((En2o_NOE/1160)*1.57*298*0.001)
+  Output1$N2O_total_t_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*298*0.001)
 
   #1 kg CO2-C = (44/12)*1 kg CO2 =3.67 kg CO2 ! (IPCC, 2013)
-  Output1$Reco_t_CO2_ha  <- try(((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))*0.01*3.67)
+  Output1$Reco_t_CO2_ha  <- try(((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67)
 
   # Total budget
-  Output1$GHG_t_CO2_equiv_ha <- try(((En2o_NOE/1160)*1.57*298*0.001) + (((Co2S*0.5) + (RespCr*0.5) + (RespEr*0.5)+ (REspCv*0.5) + (REspEv*0.5)+(REspCPv*0.5)+(REspEPv*0.5)+(RespCPr*0.5)+(RespEPr*0.5))*0.01*3.67))
+  Output1$GHG_t_CO2_equiv_ha <- try(((Output1$En2o_NOE/1160)*1.57*298*0.001) + (((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67))
 
   # GPP
-  Output1$GPP  <- try(PST*0.5)
+  Output1$GPP  <- try(Output1$PST*0.5)
 
 
 

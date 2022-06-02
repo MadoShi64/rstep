@@ -7,12 +7,12 @@
 clean_out_dir(new_outpath, old_outpath)
 }
 \arguments{
-\item{new_outpath}{the path to the folder "new_output" (the current directory of the outputs)}
+\item{new_outpath}{the path to the folder new_output (the current directory of the outputs)}
 
-\item{old_outpath}{the path to a back up folder "old_output" (the folder in which you want to store the outputs of the previous simulation)}
+\item{old_outpath}{the path to a back up folder old_output (the folder in which you want to store the outputs of the previous simulation)}
 }
 \value{
-
+nothing
 }
 \description{
 Back up outputs of a previous simulation
