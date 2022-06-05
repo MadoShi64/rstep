@@ -22,7 +22,9 @@ STEP model outputs.
 You can install the development version of rstep like so:
 
 ``` r
-install.packages("rstep")
+install.packages("devtools")
+library(devtools)
+install_github("MadoShi64/rstep")
 ```
 
 ## Example
