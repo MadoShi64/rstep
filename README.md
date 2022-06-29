@@ -14,7 +14,15 @@ status](https://ci.appveyor.com/api/projects/status/github/MadoShi64/rstep?branc
 coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MadoShi64/rstep?branch=master)
 <!-- badges: end -->
 
-rstep provides simple functions to automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.vge)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration. It provides a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which others come from other packages in the R environment.
+rstep provides simple functions to automatize the different tasks when
+performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. It
+prepares the input data (meteo (file.mto), sol (file.sol), animal load
+(file.cha), vegetation (file.vge)…) for STEP simulation, by cleaning and
+formatting the data. It provides a simple workflow for the model
+parametrization and calibration. It provides a set of functions to
+automatize the visualisation of the model outputs (1D: plots and 2D:
+maps), using several functions some of which others come from other
+packages in the R environment.
 
 ## Installation
 
@@ -27,18 +35,14 @@ remotes::install_github("MadoShi64/rstep")
 
 ## Example
 
-This is a basic example which shows you how to perform a linear regression for a variable of interest and display the graph and metrics
+An example which shows how to perform a linear regression and display
+the graph and metrics An example with a random dataset.
 
 ``` r
 library(rstep)
-## basic example code
-```
 
-An example with a random dataset.
-
-``` r
 set.seed(15)
-Etr = abs(rnorm(30))
+Etr = abs(rnorm(30)) 
 Etr.simu = abs(rnorm(30)) 
 
 # create data frame
@@ -46,6 +50,7 @@ data = data.frame(Etr,Etr.simu)
 
 # Plot the graph of the regression
 step_reg(data,"Etr","plot")
+#> `geom_smooth()` using formula 'y ~ x'
 ```
 
 <img src="man/figures/README-cars-1.png" width="100%" />

@@ -36,15 +36,11 @@ remotes::install_github("MadoShi64/rstep")
 ## Example
 
 An example which shows how to perform a linear regression and display the graph and metrics
-
-```{r example}
-library(rstep)
-## basic example code
-```
-
 An example with a random dataset. 
 
 ```{r cars}
+library(rstep)
+
 set.seed(15)
 Etr = abs(rnorm(30)) 
 Etr.simu = abs(rnorm(30)) 
