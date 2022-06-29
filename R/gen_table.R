@@ -95,7 +95,7 @@ gen_table = function(filepath,
     simu= read_csv(paste0(workspace,"/",filename,".csv"),
                    col_types = cols(Date = col_date(format = "%Y-%m-%d")))
 
-    simu = data.frame(Date=as.POSIXct(simu$Date),simu[sim_variables])
+    simu = data.frame(Date=as.Date(simu$Date),simu[sim_variables])
     return(simu)
   }
 
