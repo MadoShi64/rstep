@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Maintainer: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Year: 2022
-Description: rstep provides simple functions to automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.vge)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration. It provides a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which others come from other packages in the R environment.
+Description: rstep provides simple functions to automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
