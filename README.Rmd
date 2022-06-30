@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MadoShi64/rstep?branch=master)
 <!-- badges: end -->
 
-rstep provides simple functions to automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.vge)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration. It provides a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which others come from other packages in the R environment. 
+rstep provides simple functions to automatize the different tasks when performing 1D or 2D STEP (Mougin et al. 1995) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.veg)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration, with a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which come from other packages in the R environment. 
 
 ## Installation
 
@@ -33,26 +33,32 @@ install.packages("remotes")
 remotes::install_github("MadoShi64/rstep")
 ```
 
-## Example
+## Some examples
 
-An example which shows how to perform a linear regression and display the graph and metrics
-An example with a random dataset. 
+Calling a STEP soil file for formatting
+
+```{r}
+rstep::sol
+```
+
+
+An example showing how to perform a linear regression, display the graph and metrics with one line of code (example with a random dataset.) 
 
 ```{r cars}
 library(rstep)
 
 set.seed(15)
-Etr = abs(rnorm(30)) 
-Etr.simu = abs(rnorm(30)) 
+var = abs(rnorm(30)) # observation
+var.simu = abs(rnorm(30)) # simulation
 
 # create data frame
-data = data.frame(Etr,Etr.simu) 
+data = data.frame(var,var.simu) 
 
 # Plot the graph of the regression
-step_reg(data,"Etr","plot")
+step_reg(data,"var","plot")
 
 # Check the metrics of the linear regression 
-step_reg(data,"Etr","metric")
+step_reg(data,"var","metric")
 
 ```
 
