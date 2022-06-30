@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.com/MadoShi64/rstep.svg?branch=master)](https://travis-ci.com/MadoShi64/rstep)
 [![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/MadoShi64/rstep?branch=master&svg=true)](https://ci.appveyor.com/project/MadoShi64/rstep)
