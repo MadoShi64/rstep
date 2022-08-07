@@ -81,9 +81,9 @@ step_reg = function (dataframe,
     c = round(rsqrt,digits=2) ; d = round(rmse,digits = 2)
 
     plot = ggplot(df1, aes(y=df1[,paste0(varname,".simu")], x=df1[,varname]),color=stu)+
-      geom_abline(intercept=0, slope=1, colour = "gray70", linetype = "solid")+
-      geom_point(alpha = 200)+
-      geom_smooth(colour="black", method="lm") +
+      geom_abline(intercept=0, slope=1, colour = "gray70", linetype = "solid",size=.5)+
+      geom_point(alpha = 200,size=.7)+
+      geom_smooth(colour="black", method="lm",size=.5) +
       ylab(paste0("Simulated ",varname))+
       xlab(paste0("Observed ",varname)) +
       theme_minimal()+
