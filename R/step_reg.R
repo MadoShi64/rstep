@@ -81,13 +81,11 @@ step_reg = function (dataframe,
     c = round(rsqrt,digits=2) ; d = round(rmse,digits = 2)
 
     plot = ggplot(df1, aes(y=df1[,paste0(varname,".simu")], x=df1[,varname]),color=stu)+
-      geom_abline(intercept=0, slope=1, colour = "gray70", linetype = "solid",size=.5)+
-      geom_point(alpha = 200,size=.7)+
-      geom_smooth(colour="black", method="lm",size=.5) +
+      geom_abline(intercept=0, slope=1, colour = "gray70", linetype = "solid")+
+      geom_point(alpha = 200)+
+      geom_smooth(colour="black", method="lm") +
       ylab(paste0("Simulated ",varname))+
       xlab(paste0("Observed ",varname)) +
-      scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
-      scale_x_continuous(expand = c(0, 0), limits = c(0, NA))+
       theme_minimal()+
       theme(axis.text=element_text(colour="black"),
             axis.title=element_text(face = 'italic'),
@@ -97,11 +95,7 @@ step_reg = function (dataframe,
                label = paste0("Y = ",a,"X + ",b,"\n R\u00B2 = ",c," RMSE = ",d),
                size=3.5, fontface = 'italic',
                hjust = 1,
-               vjust = 0)+
-      coord_fixed(xlim = c(min(min(df1[,paste0(varname,".simu")]),min(df1[,paste0(varname,".simu")])),
-                           min(min(df1[,paste0(varname,".simu")]),min(df1[,paste0(varname,".simu")]))),
-                  ylim=c(max(max(df1[,paste0(varname,".simu")]),max(df1[,paste0(varname,".simu")])),
-                         max(max(df1[,paste0(varname,".simu")]),max(df1[,paste0(varname,".simu")]))))
+               vjust = 0)
     return(plot)
   }
 
