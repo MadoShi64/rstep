@@ -53,10 +53,10 @@ An example showing how to perform a linear regression, display the graph and met
 
 ```{r cars}
 library(rstep)
-
-set.seed(15)
-var = abs(rnorm(30)) # observation
-var.simu = abs(rnorm(30)) # simulation
+t = c(2,9,19,25,30,48,51,63,50,40,38,22,17,11,8,2,1) 
+t2 = c(2.8,11,19,21.8,30,48,52,76,45,38,38,22,16,11,8.9,2.5,1)
+var = t# observation
+var.simu = t2# simulation
 
 # create data frame
 data = data.frame(var,var.simu) 

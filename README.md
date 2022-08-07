@@ -61,10 +61,10 @@ and metrics with one line of code (example with a random dataset.)
 
 ``` r
 library(rstep)
-
-set.seed(15)
-var = abs(rnorm(30)) # observation
-var.simu = abs(rnorm(30)) # simulation
+t = c(2,9,19,25,30,48,51,63,50,40,38,22,17,11,8,2,1) 
+t2 = c(2.8,11,19,21.8,30,48,52,76,45,38,38,22,16,11,8.9,2.5,1)
+var = t# observation
+var.simu = t2# simulation
 
 # create data frame
 data = data.frame(var,var.simu) 
@@ -79,6 +79,6 @@ step_reg(data,"var","plot")
 ``` r
 # Check the metrics of the linear regression 
 step_reg(data,"var","metric")
-#>   r.squared      rmse       mae accuracy       bias
-#> 1 0.1652742 0.8668114 0.6749571        0 -0.1425967
+#>   r.squared     rmse      mae  accuracy       bias
+#> 1 0.9713864 3.564036 1.729412 0.4117647 -0.4117647
 ```
