@@ -13,15 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rstep: a workflow for STEP (Sahelian Transpiration Evaporation and Productivity) model under R
+
+# [rstep](https://vezy.github.io/DynACof): a workflow for STEP (Sahelian Transpiration Evaporation and Productivity) model under R <img src="man/figures/logo.png" align="right" height="139" />
+
+
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/MadoShi64/rstep?branch=master&svg=true)](https://ci.appveyor.com/project/MadoShi64/rstep)
 [![Codecov test coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](https://app.codecov.io/gh/MadoShi64/rstep?branch=master)
 <!-- badges: end -->
 
-rstep provides simple functions to automatize the different tasks when performing 1D or 2D STEP (Mougin et al. 1995) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.veg)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration, with a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which come from other packages in the R environment. 
+
+
+## Overview
+
+rstep provides simple functions to automatize the different tasks when performing 1D or 2D STEP [(Mougin et al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268) simulation. It prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.veg)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration, with a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which come from other packages in the R environment. 
+
 
 ## Installation
 
@@ -31,6 +38,7 @@ The development version of rstep can be installed from GitHub:
 install.packages("remotes")
 remotes::install_github("MadoShi64/rstep")
 ```
+
 
 ## Some examples
 
