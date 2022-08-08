@@ -41,10 +41,8 @@ step_plot = function(dataframe,
       #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
       ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
       #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
-      theme_bw() + # eliminate default background
-      theme(panel.grid.major = element_blank(), # eliminate major grids
-            panel.grid.minor = element_blank(), # eliminate minor grids
-            text = element_text(family="serif"),
+      theme_minimal()+ # eliminate default background
+      theme(text = element_text(family="serif"),
             axis.title.x = element_text(size = 10, face = "bold", color="black"),
             axis.text.x = element_text(size = 10, face = "bold", color="black"),
             axis.title.y = element_text(size = 10, face = "bold", color="black"),
@@ -66,12 +64,10 @@ step_plot = function(dataframe,
                              values = c("black","peru")) +
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
           ylab(paste0(names(dataframe[varname])," ",unit))+xlab(names(dataframe[1]))+
-          theme_bw() + # eliminate default background
+          theme_minimal()+ # eliminate default background
           scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
-          theme(panel.grid.major = element_blank(), # eliminate major grids
-                axis.text.x = element_text(size = 10, face = "bold", color="black"),
+          theme(axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
-                panel.grid.minor = element_blank(), # eliminate minor grids
                 text = element_text(family="serif"),
                 axis.title.x = element_text(size = 10, face = "bold", color="black"),
                 legend.position = "bottom",
@@ -89,12 +85,10 @@ step_plot = function(dataframe,
                              values = c("black","peru")) +
           #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
           ylab(paste0((varname)," ",unit))+xlab("Date")+
-          theme_bw() + # eliminate default background
+          theme_minimal() + # eliminate default background
           #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
-          theme(panel.grid.major = element_blank(), # eliminate major grids
-                axis.text.x = element_text(size = 10, face = "bold", color="black"),
+          theme(axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
-                panel.grid.minor = element_blank(), # eliminate minor grids
                 text = element_text(family="serif"),
                 axis.title.x = element_text(size = 10, face = "bold", color="black"),
                 legend.position = "bottom",
@@ -111,11 +105,9 @@ step_plot = function(dataframe,
         scale_color_manual(values="peru")+
         #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
         ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
-        theme_bw() + # eliminate default background
+        theme_minimal()+# eliminate default background
         scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
-        theme(panel.grid.major = element_blank(), # eliminate major grids
-              panel.grid.minor = element_blank(), # eliminate minor grids
-              text = element_text(family="serif"),
+        theme(text = element_text(family="serif"),
               axis.title.x = element_text(size = 10, face = "bold", color="black"),
               axis.text.x = element_text(size = 10, face = "bold", color="black"),
               axis.title.y = element_text(size = 10, face = "bold", color="black"),
