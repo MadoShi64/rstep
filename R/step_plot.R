@@ -38,9 +38,9 @@ step_plot = function(dataframe,
       #geom_line(aes(color = variable), size = 0.65)+
       geom_point(aes(color = variable))+
       scale_color_manual(values="peru")+
-      #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
+      scale_x_date(date_labels="%Y",date_breaks  ="1 year",expand = c(0, 0))+
       ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
-      #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
+      scale_y_continuous(expand = c(0, 0.01))+
       theme_minimal()+ # eliminate default background
       theme(text = element_text(family="serif"),
             axis.title.x = element_text(size = 10, face = "bold", color="black"),
@@ -62,10 +62,10 @@ step_plot = function(dataframe,
           geom_line(aes(color = variable), size = 0.5)+
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
-          #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
+          scale_x_date(date_labels="%Y",date_breaks  ="1 year",expand = c(0, 0))+
           ylab(paste0(names(dataframe[varname])," ",unit))+xlab(names(dataframe[1]))+
           theme_minimal()+ # eliminate default background
-          scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
+          scale_y_continuous(expand = c(0, 0.01), limits = c(0, NA))+
           theme(axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
                 text = element_text(family="serif"),
@@ -83,10 +83,10 @@ step_plot = function(dataframe,
           geom_point(data=subset(df2,variable == varname))+
           scale_color_manual(labels = c("Observation","Simulation"),
                              values = c("black","peru")) +
-          #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
+          scale_x_date(date_labels="%Y",date_breaks  ="1 year",expand = c(0, 0))+
           ylab(paste0((varname)," ",unit))+xlab("Date")+
           theme_minimal() + # eliminate default background
-          #scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
+          scale_y_continuous(expand = c(0, 0.01), limits = c(0, NA))+
           theme(axis.text.x = element_text(size = 10, face = "bold", color="black"),
                 axis.title.y = element_text(size = 10, face = "bold", color="black"),
                 text = element_text(family="serif"),
@@ -103,10 +103,10 @@ step_plot = function(dataframe,
         geom_line(aes(color = variable), size = 0.65)+
         #geom_point(aes(color = variable))+
         scale_color_manual(values="peru")+
-        #scale_x_date(date_labels="%Y",date_breaks  ="1 year")+
+        scale_x_date(date_labels="%Y",date_breaks  ="1 year",expand = c(0, 0))+
         ylab(paste0(names(dataframe[varname])," ",unit))+xlab("Date")+
         theme_minimal()+# eliminate default background
-        scale_y_continuous(expand = c(0, 0), limits = c(0, NA))+
+        scale_y_continuous(expand = c(0, 0.01), limits = c(0, NA))+
         theme(text = element_text(family="serif"),
               axis.title.x = element_text(size = 10, face = "bold", color="black"),
               axis.text.x = element_text(size = 10, face = "bold", color="black"),
