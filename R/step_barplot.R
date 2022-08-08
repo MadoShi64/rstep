@@ -48,7 +48,7 @@ step_barplot = function(dataframe,
     g = ggplot(data = sumYear,
                         aes(x    = years,
                             y    = mean)) +
-      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)
+      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)+
 
       #geom_errorbar(aes(ymax=mean+sd, ymin=mean-sd), size=.4, width=.15, linetype="solid", position=position_dodge(.9)) +
       #geom_point(position=position_dodge(width=.9), shape="", show.legend = FALSE) +
@@ -78,7 +78,7 @@ step_barplot = function(dataframe,
     ggplot(data = sumYear,
                     aes(x    = years,
                         y    = sum)) +
-      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)
+      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)+
       geom_text(aes(label=sum), vjust=1.6, color="black", position = position_dodge(1.5), size=3)+
 
       labs(x = "Year", y = paste0(varname," [annual sum]")) +
