@@ -48,8 +48,7 @@ step_barplot = function(dataframe,
     g = ggplot(data = sumYear,
                         aes(x    = years,
                             y    = mean)) +
-
-      geom_bar(stat="identity", position=position_dodge()) +
+      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)
 
       #geom_errorbar(aes(ymax=mean+sd, ymin=mean-sd), size=.4, width=.15, linetype="solid", position=position_dodge(.9)) +
       #geom_point(position=position_dodge(width=.9), shape="", show.legend = FALSE) +
@@ -61,13 +60,12 @@ step_barplot = function(dataframe,
 
       labs(x = "Year",
            y = paste0(varname," [annual mean]")) +
-      theme_bw() + # eliminate default background
-      theme(panel.grid.major = element_blank(), # eliminate major grids
-            panel.grid.minor = element_blank(), # eliminate minor grids
-            text = element_text(family="serif"),
-            axis.title.x = element_text(size = 10, face = "bold", color="black"),
-            axis.text.x = element_text(size = 10, face = "bold", color="black"),
-            axis.title.y = element_text(size = 10, face = "bold", color="black"),
+      theme_minimal() +
+      theme(text = element_text(family="CenturySch"),
+            axis.title.y = element_text(size = 10, face = "bold"),
+            axis.text.x = element_text(size = 10,color="black"),
+            axis.text.y = element_text(size = 10,color="black"),
+            axis.title.x=element_blank()
       )
     g
     if(errorbar==FALSE){
@@ -80,17 +78,16 @@ step_barplot = function(dataframe,
     ggplot(data = sumYear,
                     aes(x    = years,
                         y    = sum)) +
-      geom_bar(stat="identity", position=position_dodge()) +
+      geom_bar(stat="identity",position=position_dodge(),alpha=0.7)
       geom_text(aes(label=sum), vjust=1.6, color="black", position = position_dodge(1.5), size=3)+
 
       labs(x = "Year", y = paste0(varname," [annual sum]")) +
-      theme_bw() + # eliminate default background
-      theme(panel.grid.major = element_blank(), # eliminate major grids
-            panel.grid.minor = element_blank(), # eliminate minor grids
-            text = element_text(family="serif"),
-            axis.title.x = element_text(size = 10, face = "bold", color="black"),
-            axis.text.x = element_text(size = 10, face = "bold", color="black"),
-            axis.title.y = element_text(size = 10, face = "bold", color="black"),
+      theme_minimal() +
+      theme(text = element_text(family="CenturySch"),
+            axis.title.y = element_text(size = 10, face = "bold"),
+            axis.text.x = element_text(size = 10,color="black"),
+            axis.text.y = element_text(size = 10,color="black"),
+            axis.title.x=element_blank()
       )
   }
 
