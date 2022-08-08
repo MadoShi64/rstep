@@ -28,7 +28,7 @@ step_plt = function(dataframe,
                      varname,
                      unit=NULL,
                      type="line",
-                     obs=F){
+                     obs=F,a,b){
 
   if (type=="point"){
     df2 <- dataframe %>%
