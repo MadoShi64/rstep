@@ -61,8 +61,7 @@ step_barplot = function(dataframe,
       labs(x = "Year",
            y = paste0(varname," [annual mean]")) +
       theme_minimal() +
-      theme(text = element_text(family="CenturySch"),
-            axis.title.y = element_text(size = 10, face = "bold"),
+      theme(axis.title.y = element_text(size = 10, face = "bold"),
             axis.text.x = element_text(size = 10,color="black"),
             axis.text.y = element_text(size = 10,color="black"),
             axis.title.x=element_blank()
@@ -83,8 +82,7 @@ step_barplot = function(dataframe,
 
       labs(x = "Year", y = paste0(varname," [annual sum]")) +
       theme_minimal() +
-      theme(text = element_text(family="CenturySch"),
-            axis.title.y = element_text(size = 10, face = "bold"),
+      theme(axis.title.y = element_text(size = 10, face = "bold"),
             axis.text.x = element_text(size = 10,color="black"),
             axis.text.y = element_text(size = 10,color="black"),
             axis.title.x=element_blank()
