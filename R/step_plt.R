@@ -6,6 +6,8 @@
 #' @param type the type of dynamic plot you want "line or point)
 #' @param obs notify whether or not you want to display the observations alongside
 #' @param unit the variable
+#' @param a the variable
+#' @param b the variable
 #'
 #' @description step_plot displays a dynamic plot or a scatter plot for selected step variable
 #'
