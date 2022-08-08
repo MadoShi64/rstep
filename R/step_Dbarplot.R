@@ -64,54 +64,23 @@ step_Dbarplot = function(dataframe,
                        aes(x    = years,
                            y    = mean,
                            fill = Season)) +
-
-      # add the bars (means)
-      geom_bar(stat="identity", position=position="stack",alpha=0.7) +
-      # fill the bars manually
+      geom_bar(stat="identity", position="stack",alpha=0.7) +
       scale_fill_manual(name   = 'Season:',
                         breaks = c("dry_season", "wet_season"),
                         values = c("dry_season" = "gray70",
                                    "wet_season" = "gray40"),
                         labels = c("Dry season", "Wet season")) +
-
-      # plot CIs (add a point shape as well)
-      #geom_point(position=position_dodge(width=.9), shape="-", show.legend = FALSE) +
-
-      # set order of discrete values on OX axes & adjust the distance (gap) from OY axes
-      #scale_x_discrete(limits = c("control", "T1", "T2", "T1&2"),
-      #                labels = c("control", "Treatment 1", "Treatment 2", "Treatment 1 \n and Treatment 2"),
-      #               expand = c(0, .5)) +
       scale_x_discrete(expand = c(0, 1)) +
-      # set range on OY axes and adjust the distance (gap) from OX axes
-      #scale_y_continuous(limits = c(0, 10), expand = c(0, 0)) +
-
-      geom_text(aes(label=mean), vjust=1.5, color="black", position = position_dodge(1), size=3)+
-
-
-      # Final adjustments:
-      # set axis labels
       labs(x = "Year", y = paste0(ylab)) +
       theme_minimal()+
-      theme(# set font family for all text within the plot ("serif" should work as "Times New Roman")
-            # note that this can be overridden with other adjustment functions below
-            text = element_text(family="serif"),
-            # adjust X-axis title
+      theme(text = element_text(family="serif"),
             axis.title.x = element_text(size = 10, face = "bold"),
-            # adjust X-axis labels
             axis.text.x = element_text(size = 10, face = "bold", color="black"),
-            # adjust Y-axis title
             axis.title.y = element_text(size = 11, face = "bold"),
-            # adjust legend title appearance
             legend.title = element_text(size = 8, face = "bold"),
-            # adjust legend label appearance
             legend.text = element_text(size = 8, face = "italic"),
-            # change spacing between legend items
             legend.key.height = unit(4, "mm"),
-            # don't draw legend box (check element_rect() for borders and backgrounds)
             legend.background = element_blank(),
-            # Put upper-left corner of legend box in upper-left corner of graph
-            # Note that the numeric position in legend.position below is relative to the entire area,
-            # including titles and labels, not just the plotting area
             legend.justification = c(0,1),
             legend.position = c(0,1))
     g
@@ -126,10 +95,7 @@ step_Dbarplot = function(dataframe,
                        aes(x    = years,
                            y    = sum,
                            fill = Season)) +
-
-      # add the bars (means)
       geom_bar(stat="identity", position="stack",alpha=0.7) +
-      # fill the bars manually
       scale_fill_manual(name   = 'Season:',
                         breaks = c("dry_season", "wet_season"),
                         values = c("dry_season" = "gray70",
@@ -137,9 +103,8 @@ step_Dbarplot = function(dataframe,
                         labels = c("Dry season", "Wet season")) +
 
       scale_x_discrete(expand = c(0, 1)) +
-      geom_text(aes(label=sum), vjust=1.5, color="black", position = position_dodge(1.5), size=3)+
       labs(x = "Year", y = paste0(ylab)) +
-      theme_minimal() + # eliminate default background
+      theme_minimal() +
       theme(text = element_text(family="serif"),
             axis.title.x = element_text(size = 10, face = "bold"),
             axis.text.x = element_text(size = 10, face = "bold", color="black"),
