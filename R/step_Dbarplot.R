@@ -66,7 +66,7 @@ step_Dbarplot = function(dataframe,
                            fill = Season)) +
 
       # add the bars (means)
-      geom_bar(stat="identity", position=position_dodge()) +
+      geom_bar(stat="identity", position=position="stack",alpha=0.7) +
       # fill the bars manually
       scale_fill_manual(name   = 'Season:',
                         breaks = c("dry_season", "wet_season"),
@@ -91,10 +91,8 @@ step_Dbarplot = function(dataframe,
       # Final adjustments:
       # set axis labels
       labs(x = "Year", y = paste0(ylab)) +
-      theme_bw() + # eliminate default background
-      theme(panel.grid.major = element_blank(), # eliminate major grids
-            panel.grid.minor = element_blank(), # eliminate minor grids
-            # set font family for all text within the plot ("serif" should work as "Times New Roman")
+      theme_minimal()+
+      theme(# set font family for all text within the plot ("serif" should work as "Times New Roman")
             # note that this can be overridden with other adjustment functions below
             text = element_text(family="serif"),
             # adjust X-axis title
@@ -130,7 +128,7 @@ step_Dbarplot = function(dataframe,
                            fill = Season)) +
 
       # add the bars (means)
-      geom_bar(stat="identity", position=position_dodge()) +
+      geom_bar(stat="identity", position="stack",alpha=0.7) +
       # fill the bars manually
       scale_fill_manual(name   = 'Season:',
                         breaks = c("dry_season", "wet_season"),
@@ -141,10 +139,8 @@ step_Dbarplot = function(dataframe,
       scale_x_discrete(expand = c(0, 1)) +
       geom_text(aes(label=sum), vjust=1.5, color="black", position = position_dodge(1.5), size=3)+
       labs(x = "Year", y = paste0(ylab)) +
-      theme_bw() + # eliminate default background
-      theme(panel.grid.major = element_blank(), # eliminate major grids
-            panel.grid.minor = element_blank(), # eliminate minor grids
-            text = element_text(family="serif"),
+      theme_minimal() + # eliminate default background
+      theme(text = element_text(family="serif"),
             axis.title.x = element_text(size = 10, face = "bold"),
             axis.text.x = element_text(size = 10, face = "bold", color="black"),
             axis.title.y = element_text(size = 11, face = "bold"),
