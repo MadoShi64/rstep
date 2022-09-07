@@ -78,11 +78,11 @@ write_step_out = function(file.name,
   Output1$N2O_total_kg_ha  <- try(Output1$En2o_NOE/1160)
   Output1$N2O_total_t_ha  <- try((Output1$En2o_NOE/1160)*0.001)
 
-  # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O and 1 kg N2O = 298 kg CO2 equivalents !(IPCC, 2013)
-  Output1$N2O_total_kg_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*298)
+  # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O and 1 kg N2O = 265 kg CO2 equivalents !(IPCC, 2014) 5th Assessment
+  Output1$N2O_total_kg_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*265)
 
   # 1kg/ha = 0.001 t/ha
-  Output1$N2O_total_t_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*298*0.001)
+  Output1$N2O_total_t_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*265*0.001)
 
   #1 kg CO2-C = (44/12)*1 kg CO2 =3.67 kg CO2 ! (IPCC, 2013)
   Output1$Reco_t_CO2_ha  <- try(((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67)
