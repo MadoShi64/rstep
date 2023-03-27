@@ -18,7 +18,7 @@ al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/00344257940012
 simulation. It prepares the input data (meteo (file.mto), sol
 (file.sol), animal load (file.cha), vegetation (file.veg)…) for STEP
 simulation, by cleaning and formatting the data. It provides a simple
-workflow for the model parametrization and calibration, with a set of
+workflow with a set of
 functions to automatize the visualisation of the model outputs (1D:
 plots and 2D: maps), using several functions some of which come from
 other packages in the R environment.
