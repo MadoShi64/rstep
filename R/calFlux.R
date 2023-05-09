@@ -93,7 +93,7 @@ CO2equi = function (x,
     return(y)
   }
   if (Gas == "N2O-N"){
-    y = x* 1.57 * 298
+    y = x* 1.57 * 265
     return(y)
   }
 }

@@ -88,7 +88,7 @@ write_step_out = function(file.name,
   Output1$Reco_t_CO2_ha  <- try(((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67)
 
   # Total budget
-  Output1$GHG_t_CO2_equiv_ha <- try(((Output1$En2o_NOE/1160)*1.57*298*0.001) + (((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67))
+  Output1$GHG_t_CO2_equiv_ha <- try(((Output1$En2o_NOE/1160)*1.57*265*0.001) + (((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67))
 
   # GPP
   Output1$GPP  <- try(Output1$PST*0.5)
