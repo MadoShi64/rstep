@@ -9,7 +9,7 @@ Description: rstep provides simple functions to automatize the different tasks w
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 URL: https://github.com/MadoShi64/rstep
 BugReports: https://github.com/MadoShi64/rstep/issues
 Suggests: 
