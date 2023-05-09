@@ -12,12 +12,11 @@ coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](
 
 ## Overview
 
-rstep provides a streamlined workflow to automate various tasks when
-performing 1D or 2D STEP simulations [(Mougin et
+rstep provides a workflow to automate various tasks when performing 1D
+or 2D STEP simulations [(Mougin et
 al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268).
-It prepares input data for the model, executes the model in R, and
-automates the visualization of model outputs, allowing for a
-comprehensive analysis of simulation results
+It prepares the model input data, runs the model in R, and automates the
+visualization of the model results.
 
 ## Installation
 
