@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-rstep provides simple functions to automatize the different tasks when performing 1D or 2D STEP [(Mougin et al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268) simulation. It run the STEP model form R and prepares the input data (meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation (file.veg)...) for STEP simulation, by cleaning and formatting the data. It provides a simple workflow for the model parametrization and calibration, with a set of functions to automatize the visualisation of the model outputs (1D: plots and 2D: maps), using several functions some of which come from other packages in the R environment. 
+rstep provides a streamlined workflow to automate various tasks when performing 1D or 2D STEP simulations [(Mougin et al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268). It prepares input data for the model, executes the model in R, and automates the visualization of model outputs, allowing for a comprehensive analysis of simulation results
 
 
 ## Installation
@@ -55,7 +55,7 @@ Run the model from R
 #            daily_original=filepath)
 ```
 
-An example showing how to perform a linear regression, display the graph and metrics with one line of code (example with a random dataset.) 
+Here's an example of visualization "simulation vs observation" with metrics.
 
 ```{r cars}
 library(rstep)
