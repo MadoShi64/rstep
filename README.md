@@ -15,13 +15,13 @@ coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](
 rstep provides simple functions to automatize the different tasks when
 performing 1D or 2D STEP [(Mougin et
 al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268)
-simulation. It prepares the input data (meteo (file.mto), sol
-(file.sol), animal load (file.cha), vegetation (file.veg)…) for STEP
-simulation, by cleaning and formatting the data. It provides a simple
-workflow with a set of
-functions to automatize the visualisation of the model outputs (1D:
-plots and 2D: maps), using several functions some of which come from
-other packages in the R environment.
+simulation. It run the STEP model form R and prepares the input data
+(meteo (file.mto), sol (file.sol), animal load (file.cha), vegetation
+(file.veg)…) for STEP simulation, by cleaning and formatting the data.
+It provides a simple workflow for the model parametrization and
+calibration, with a set of functions to automatize the visualisation of
+the model outputs (1D: plots and 2D: maps), using several functions some
+of which come from other packages in the R environment.
 
 ## Installation
 
@@ -38,7 +38,7 @@ Calling a STEP soil file for formatting
 
 ``` r
 rstep::sol
-#> Warning in as.POSIXlt.POSIXct(Sys.time()): unable to identify current timezone 'C':
+#> Warning in Sys.timezone(): unable to identify current timezone 'T':
 #> please set environment variable 'TZ'
 #> # A tibble: 11 × 7
 #>    X1                            ...2               ...3  ...4  ...5  ...6 ...7 
@@ -56,6 +56,13 @@ rstep::sol
 #> 11 <NA>                          2                   3     4     4    NA   ! pe…
 ```
 
+Run the model from R
+
+``` r
+#run_step_1D(step_daily_original=step_path,
+#            daily_original=filepath)
+```
+
 An example showing how to perform a linear regression, display the graph
 and metrics with one line of code (example with a random dataset.)
 
@@ -71,12 +78,13 @@ data = data.frame(var,var.simu)
 
 # Plot the graph of the regression
 step_reg(data,"var","plot")
-#> `geom_smooth()` using formula 'y ~ x'
+#> `geom_smooth()` using formula = 'y ~ x'
 ```
 
 <img src="man/figures/README-cars-1.png" width="100%" />
 
 ``` r
+
 # Check the metrics of the linear regression 
 step_reg(data,"var","metric")
 #>   r.squared     rmse      mae  accuracy       bias
