@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Maintainer: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Year: 2022
-Description: rstep provides simple functions to automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. 
+Description: rstep provides simple functions to run STEP and automatize the different tasks when performing 1D and/or 2D STEP (Mougin et al. 1995) simulation. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
