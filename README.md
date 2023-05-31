@@ -57,31 +57,3 @@ Run the model from R
 #run_step_1D(step_daily_original=step_path,
 #            daily_original=filepath)
 ```
-
-Here’s an example of visualization “simulation vs observation” with
-metrics.
-
-``` r
-library(rstep)
-t = c(2,9,19,25,30,48,51,63,50,40,38,22,17,11,8,2,1) 
-t2 = c(2.8,11,19,21.8,30,48,52,76,45,38,38,22,16,11,8.9,2.5,1)
-var = t# observation
-var.simu = t2# simulation
-
-# create data frame
-data = data.frame(var,var.simu) 
-
-# Plot the graph of the regression
-step_reg(data,"var","plot")
-#> `geom_smooth()` using formula = 'y ~ x'
-```
-
-<img src="man/figures/README-cars-1.png" width="100%" />
-
-``` r
-
-# Check the metrics of the linear regression 
-step_reg(data,"var","metric")
-#>   r.squared     rmse      mae  accuracy       bias
-#> 1 0.9713864 3.564036 1.729412 0.4117647 -0.4117647
-```
