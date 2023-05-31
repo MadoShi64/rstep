@@ -2,7 +2,7 @@
 % Please edit documentation in R/step_reg.R
 \name{step_reg}
 \alias{step_reg}
-\title{Perform a linear regression}
+\title{Perform a linear regression simulation vs observation}
 \usage{
 step_reg(dataframe, varname, target = NULL)
 }

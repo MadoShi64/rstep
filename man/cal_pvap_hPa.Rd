@@ -2,7 +2,7 @@
 % Please edit documentation in R/cal_pvpa_hPa.R
 \name{cal_pvap_hPa}
 \alias{cal_pvap_hPa}
-\title{Computes vapor pressure in hPa}
+\title{Compute vapor pressure in hPa}
 \usage{
 cal_pvap_hPa(relative_humidity, mean_temperature)
 }

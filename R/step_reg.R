@@ -1,5 +1,5 @@
 
-#' Perform a linear regression
+#' Perform a linear regression simulation vs observation
 #'
 #' @param dataframe the name of the dataframe generated with the function gen_table
 #' @param varname the name of the STEP variable
@@ -81,15 +81,15 @@ step_reg = function (dataframe,
     c = round(rsqrt,digits=2) ; d = round(rmse,digits = 2)
 
     plot = ggplot(df1, aes(y=df1[,paste0(varname,".simu")], x=df1[,varname]),color=stu)+
-      geom_abline(intercept=0, slope=1, colour = "gray70", linetype = "solid",size=.5)+
-      geom_point(alpha = 200,size=.7)+
-      geom_smooth(colour="black", method="lm",size=.5) +
+      geom_abline(intercept=0, slope=1, linetype = "dashed",size=.5)+
+      geom_point(alpha = 0.5,size=1.5)+
+      geom_smooth(colour="black", method="lm",size=.5,se = F) +
       ylab(paste0("Simulated ",varname))+
       xlab(paste0("Observed ",varname)) +
-      theme_minimal()+
-      theme(axis.text=element_text(colour="black"),
-            axis.title=element_text(face = 'italic'),
-      )+
+      theme_bw()+
+      theme(panel.grid.major= element_line(linetype="dotted"),
+            axis.text=element_text(size=8,colour="black"),
+            axis.title=element_text(size=8, face = 'italic'))+
       annotate(geom="text", x =max(df1[,varname]),
                y = min(df1[,paste0(varname,".simu")]),
                label = paste0("Y = ",a,"X + ",b,"\n R\u00B2 = ",c," RMSE = ",d),
@@ -98,5 +98,4 @@ step_reg = function (dataframe,
                vjust = 0)
     return(plot)
   }
-
 }

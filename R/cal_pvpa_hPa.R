@@ -1,4 +1,4 @@
-#' Computes vapor pressure in hPa
+#' Compute vapor pressure in hPa
 #'
 #' @param relative_humidity relative humidity in \%
 #' @param mean_temperature is the mean temperature in deg C

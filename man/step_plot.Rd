@@ -4,7 +4,7 @@
 \alias{step_plot}
 \title{Dynamic and scatter plots for selected variables}
 \usage{
-step_plot(dataframe, varname, unit = NULL, type = "line", obs = F)
+step_plot(dataframe, varname, unit = NULL, obs = F)
 }
 \arguments{
 \item{dataframe}{the name of the dataframe generated with the function gen_table}
@@ -12,8 +12,6 @@ step_plot(dataframe, varname, unit = NULL, type = "line", obs = F)
 \item{varname}{the name of the STEP variable}
 
 \item{unit}{the variable}
-
-\item{type}{the type of dynamic plot you want "line or point)}
 
 \item{obs}{notify whether or not you want to display the observations alongside}
 }
@@ -25,7 +23,7 @@ step_plot displays a dynamic plot or a scatter plot for selected step variable
 }
 \examples{
 \dontrun{
-step_plot(dataframe = df, varname = "Etr",type="line",obs=TRUE)
+step_plot(dataframe = df, varname = "Etr",unit="gC/m2",obs=TRUE)
 }
 
 
