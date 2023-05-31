@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# [rstep](https://vezy.github.io/DynACof): a workflow for STEP (Sahelian Transpiration Evaporation and Productivity) model under R <img src="man/figures/logo.png" align="right" height="139" />
+# rstep: a workflow for STEP (Sahelian Transpiration Evaporation and Productivity) model under R <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
 
