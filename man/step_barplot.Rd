@@ -4,7 +4,7 @@
 \alias{step_barplot}
 \title{Bar graph for a selected variable}
 \usage{
-step_barplot(dataframe, varname, fun, errorbar)
+step_barplot(dataframe, varname, fun = "sum")
 }
 \arguments{
 \item{dataframe}{the name of the dataframe generated with the function gen_table}
@@ -12,8 +12,6 @@ step_barplot(dataframe, varname, fun, errorbar)
 \item{varname}{the name of the STEP variable}
 
 \item{fun}{the operation you want to perform : sum or mean}
-
-\item{errorbar}{notify whether or not you want to display errorbars}
 }
 \value{
 a bar graph of the annual sum or mean of the selected variable
@@ -23,7 +21,7 @@ step_barplot displays a bar graph of the annual sum or mean of the selected vari
 }
 \examples{
 \dontrun{
-step_barplot(dataframe = df, varname = "Etr",fun="sum",errorbar = TRUE)
+step_barplot(dataframe = df, varname = "Etr",fun="sum")
 }
 
 }

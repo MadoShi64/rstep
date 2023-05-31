@@ -11,7 +11,6 @@
 #' @param varname the name of the STEP variable
 #' @param fun the operation you want to perform : sum or mean
 #' @param ylab name of the y axis
-#' @param errorbar notify whether or not you want to display errorbars
 #'
 #' @description step_Dbarplot displays a double bar graph of the annual sum or mean of the selected variable
 #'
@@ -28,7 +27,7 @@
 #' @examples
 #' \dontrun{
 #' step_Dbarplot(dataframe=df,file.name = "SeasonDahra2012-2020",
-#' filepath = filepath,fun="sum",errorbar = FALSE,
+#' filepath = filepath,fun="sum",
 #' varname = "CO2Soil",ylab="CO2 emitted per season (gC/m2)")
 #' }
 #'
@@ -37,9 +36,8 @@ step_Dbarplot = function(dataframe,
                          file.name,
                          filepath,
                          varname,
-                         fun,
-                         ylab=NULL,
-                         errorbar=FALSE){
+                         fun="sum",
+                         ylab=NULL){
   thm = theme_classic()+
     theme(panel.grid.major= element_line(linetype="dotted"),
           panel.border = element_rect(color = "black",fill = NA),
@@ -52,32 +50,30 @@ step_Dbarplot = function(dataframe,
           legend.background = element_blank(),
           legend.justification = c(0,1),
           legend.position = c(0,1))
-
+  
   df_in1 <-read_excel(paste0(filepath,"/",file.name,'.xlsx'))
   df1 <- cbind(dataframe,df_in1[,2])
   names(df1)[names(df1) == "df_in1[, 2]"] <- "Season"
-
+  
   df1$years <- format(df1$Date, "%Y")
   sumYear1 <- aggregate(df1[,varname]~years+Season, df1, "mean")
   sumYear2 <- aggregate(df1[,varname]~years+Season, df1, "sum")
   sumYear3 <- aggregate(df1[,varname]~years+Season, df1, "sd")
-
+  
   sum <- cbind(sumYear1,sumYear2$`df1[, varname]`)
   sumYear <- cbind(sum,sumYear3$`df1[, varname]`)
-
+  
   names(sumYear)[names(sumYear) == "df1[, varname]"] <- "mean"
   names(sumYear)[names(sumYear) == "sumYear2$`df1[, varname]`"] <- "sum"
   names(sumYear)[names(sumYear) == "sumYear3$`df1[, varname]`"] <- "sd"
-
+  
   sumYear=sumYear %>%
     mutate_if(is.numeric,round,digits=1)
-
-  if(fun=="mean"){yval = mean}
-  if(fun=="sum"){yval=sum}
-  if (errorbar==FALSE){
+  
+  if(fun=="mean"){
     g= ggplot(data = sumYear,
               aes(x    = years,
-                  y    = yval,
+                  y    = mean,
                   fill = Season)) +
       geom_bar(stat="identity", position="stack",alpha=0.7) +
       scale_fill_manual(name   = 'Season:',
@@ -87,7 +83,21 @@ step_Dbarplot = function(dataframe,
                         labels = c("Dry season", "Wet season")) +
       scale_x_discrete(expand = c(0, 1)) +
       labs(x = "Year", y = paste0(ylab)) +thm
-  }else{
-    g+geom_errorbar(aes(ymax=mean+sd, ymin=mean-sd), size=.4, width=.15, linetype="solid", position=position_dodge(.9))
   }
+  if(fun=="sum"){
+    g= ggplot(data = sumYear,
+              aes(x    = years,
+                  y    = sum,
+                  fill = Season)) +
+      geom_bar(stat="identity", position="stack",alpha=0.7) +
+      scale_fill_manual(name   = 'Season:',
+                        breaks = c("dry_season", "wet_season"),
+                        values = c("dry_season" = "gray70",
+                                   "wet_season" = "gray40"),
+                        labels = c("Dry season", "Wet season")) +
+      scale_x_discrete(expand = c(0, 1)) +
+      labs(x = "Year", y = paste0(ylab)) +thm
+  }
+  return(g)
+
 }

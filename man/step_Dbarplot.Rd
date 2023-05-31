@@ -9,9 +9,8 @@ step_Dbarplot(
   file.name,
   filepath,
   varname,
-  fun,
-  ylab = NULL,
-  errorbar = FALSE
+  fun = "sum",
+  ylab = NULL
 )
 }
 \arguments{
@@ -28,8 +27,6 @@ Usually the path of the folder daily_original}
 \item{fun}{the operation you want to perform : sum or mean}
 
 \item{ylab}{name of the y axis}
-
-\item{errorbar}{notify whether or not you want to display errorbars}
 }
 \value{
 a double bar graph of the annual sum or mean of the selected variable
@@ -40,7 +37,7 @@ step_Dbarplot displays a double bar graph of the annual sum or mean of the selec
 \examples{
 \dontrun{
 step_Dbarplot(dataframe=df,file.name = "SeasonDahra2012-2020",
-filepath = filepath,fun="sum",errorbar = FALSE,
+filepath = filepath,fun="sum",
 varname = "CO2Soil",ylab="CO2 emitted per season (gC/m2)")
 }
 
