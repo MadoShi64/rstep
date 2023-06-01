@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rstep: a workflow for STEP (Sahelian Transpiration Evaporation and Productivity) model under R <img src="man/figures/logo.png" align="right" height="139" />
+# rstep: a workflow for [STEP-GENDEC-CN](https://zenodo.org/record/7973200) model under R <img src="man/figures/logo.png" align="right" height="139" />
 
 <!-- badges: start -->
 
@@ -12,11 +12,31 @@ coverage](https://codecov.io/gh/MadoShi64/rstep/branch/master/graph/badge.svg)](
 
 ## Overview
 
-rstep provides a workflow to automate various tasks when performing STEP
-simulations [(Mougin et
-al. 1995)](https://www.sciencedirect.com/science/article/abs/pii/0034425794001268).
-It prepares the model input data, runs the model from R, and automates
-the visualization of the model results.
+Introducing rstep: Automating Workflow for 1D and 2D STEP-GENDEC-CN
+simulations
+
+rstep is an R package designed to simplify and automate the essential
+tasks involved in performing 1D or 2D STEP-GENDEC-CN simulations. With
+rstep, you can streamline your workflow, from preparing model input data
+to executing the model and visualizing the results, all within the
+comfort of your Rstudio environment.
+
+Key Features of rstep:
+
+1- Model Input Data Preparation: rstep provides automated functions to
+simplify the preparation of model input data. Say goodbye to manual
+formatting and transformation, and effortlessly convert your data into a
+suitable format for STEP-GENDEC-CN.
+
+2- Seamless Model Execution: Execute your 1D or 2D simulations directly
+from Rstudio with ease. rstep seamlessly interfaces with STEP-GENDEC-CN,
+allowing you to initiate simulations and monitor progress without the
+need to switch between environments.
+
+3- Automated Visualization: Save time by automating the visualization of
+your simulation results. rstep offers a range of visualization tools and
+functions, enabling you to generate informative plots and graphs
+effortlessly.
 
 ## Installation
 
