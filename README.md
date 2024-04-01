@@ -51,8 +51,6 @@ Calling a STEP soil file for formatting
 
 ``` r
 rstep::sol
-#> Warning in Sys.timezone(): unable to identify current timezone 'T':
-#> please set environment variable 'TZ'
 #> # A tibble: 11 × 7
 #>    X1                            ...2               ...3  ...4  ...5  ...6 ...7 
 #>    <chr>                         <chr>             <dbl> <dbl> <dbl> <dbl> <chr>
