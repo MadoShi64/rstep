@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Maintainer: Yelognisse Agbohessou <ayulrich@yahoo.fr>
 Year: 2022
-Description: rstep is an R package that automates the workflow for 1D and 2D STEP-GENDEC-CN simulations, simplifying data preparation, model execution, and result visualization
+Description: rstep is an R package that automates the workflow for 1D and 2D STEP-GENDEC-CN simulations, simplifying data preparation, model execution, and result visualization.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
