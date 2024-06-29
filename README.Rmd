@@ -63,3 +63,9 @@ Run the model from R
 #            daily_original=filepath)
 ```
 
+#### References : 
+
+- Agbohessou, Y., Delon, C., Mougin, E., Grippa, M., Tagesson, T., Diedhiou, M., Ba, S., Ngom, D., Vezy, R., Ndiaye, O., Assouma, M.H., Diawara, M., Roupsard, O. (2023). To what extent are greenhouse-gas emissions offset by trees in a Sahelian silvopastoral system? Agricultural and Forest Meteorology, 343, 109780. https://doi.org/10.1016/j.agrformet.2023.109780
+- Bigaignon, L., Delon, C., Ndiaye, O., Galy-Lacaux, C., Serça, D., Gue ́rin, F., Tallec, T., Merbold, L., Tagesson, T., Fensholt, R., Andre ́, S., Galliau, S., 2020. Understanding N2O emissions in African ecosystems: assessments from a semi-arid Savanna Grassland in Senegal and sub-tropical agricultural fields in Kenya 26.
+- Delon, C., Galy-Lacaux, C., Serça, D., Personne, E., Mougin, E., Adon, M., Le Dantec, V., Loubet, B., Fensholt, R., Tagesson, T., 2019. Modelling land–atmosphere daily exchanges of NO, NH3, and CO2 in a semi-arid grazed ecosystem in Senegal. Biogeosciences 16, 2049–2077. https://doi.org/10.5194/bg-16-2049-2019.
+- Mougin, E., Lo Seena, D., Rambal, S., Gaston, A., Hiernaux, P., 1995. A regional Sahelian grassland model to be coupled with multispectral satellite data. I: model description and validation. Remote Sens. Environ. 52, 181–193. https://doi.org/10.1016/00344257(94)00126-8.

@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/fredi-agbohessou/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/fredi-agbohessou/rstep/actions)
+[![R-CMD-check](https://github.com/fredi-agbohessou/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/fredi-agbohessou/actions)
 <!-- badges: end -->
 
 ## Overview
