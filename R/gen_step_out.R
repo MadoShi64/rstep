@@ -9,7 +9,7 @@
 #'
 #' @param format the desired format for the file e.g. xlsx or csv
 #'
-#' @description write_step_out writes readable output files in the formats xlsx and csv
+#' @description gen_step_out writes readable output files in the formats xlsx and csv
 #'
 #' @return a csv or excel file
 #' @export
@@ -21,11 +21,11 @@
 #'
 #' @examples
 #' \dontrun{
-#' write_step_out("Dahra",workspace,12,20,"csv")
+#' gen_step_out("Dahra",workspace,12,20,"csv")
 #' }
 #'
 #'
-write_step_out = function(file.name,
+gen_step_out = function(file.name,
                           workspace,
                           state.date,
                           end.date,
@@ -50,7 +50,7 @@ write_step_out = function(file.name,
               "(BPburn)", "(BPing)",	"BPsts",	"BPsss",	"BLmv",	"BFlita",	"LAILv",	"hca",	"hcp",	"LAIv",	"LAIPv","G","rss","Snvege","SnSolnu","Sn",
               "Ln",	"Rn",	"H",	"LAIs","LAIPs","LAIlita","vcfv","vcfs","vcfl","vcft","NOFLUX_(kgN/ha/an)","Bc","NOFlux_Process",
               "N2OFlux_Process","NO3","NO2","N2O","En20","wfps","En2o_NOE")#from 52Output put "Vcfs" between Vcfv and Vcfl
-  #title <- data.frame(t(title0))# new row for the titles
+
   #add the column titles to the new data frame
   colnames(Output) <- title0
 
@@ -77,27 +77,16 @@ write_step_out = function(file.name,
   Output1$N2Onit_kg_ha  <- try(Output1$N2OFlux_Process/365)
   Output1$N2O_total_kg_ha  <- try(Output1$En2o_NOE/1160)
   Output1$N2O_total_t_ha  <- try((Output1$En2o_NOE/1160)*0.001)
-
   # 1 kg N2O-N = (44/28)*1 kg N2O = 1.57 kg N2O and 1 kg N2O = 265 kg CO2 equivalents !(IPCC, 2014) 5th Assessment
   Output1$N2O_total_kg_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*265)
-
   # 1kg/ha = 0.001 t/ha
   Output1$N2O_total_t_CO2_equiv_ha  <- try((Output1$En2o_NOE/1160)*1.57*265*0.001)
-
   #1 kg CO2-C = (44/12)*1 kg CO2 =3.67 kg CO2 ! (IPCC, 2013)
   Output1$Reco_t_CO2_ha  <- try(((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67)
-
   # Total budget
   Output1$GHG_t_CO2_equiv_ha <- try(((Output1$En2o_NOE/1160)*1.57*265*0.001) + (((Output1$Co2S*0.5) + (Output1$RespCr*0.5) + (Output1$RespEr*0.5)+ (Output1$REspCv*0.5) + (Output1$REspEv*0.5)+(Output1$REspCPv*0.5)+(Output1$REspEPv*0.5)+(Output1$RespCPr*0.5)+(Output1$RespEPr*0.5))*0.01*3.67))
-
   # GPP
   Output1$GPP  <- try(Output1$PST*0.5)
-
-
-
-
-
-  #Output2$fsjposi<-ifelse(Output1$fsj<0,0.01,Output2$fsj) #if fsj<0 print 0.01 else fsj
 
   if(format == "csv"){
     write.csv(Output1, paste0(workspace,"/",file.name,'.csv'))

@@ -11,10 +11,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' step_var_info("Shum")
+#' find_step_var("Shum")
 #' }
 #'
-step_var_info = function (keyword){
+find_step_var = function (keyword){
   df= data.frame(step_output_variables = c("Rain : precipitation (mm.d-1)",
                                            "Etp : evapotranspiration (mm.d-1)",
                                            "Rayglo : global radiation (MJ.m-2)",

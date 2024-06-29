@@ -16,13 +16,13 @@ soil_water4, soil_temp4, clay4, sand4, pH4, silt4, soil_temp5}
 
 \item{end_yr}{the two last digits of the last year of simulation.. e.g. for 2020 it is "20"}
 
-\item{folder_patch}{path to where you want to store the file generated}
+\item{folder_patch}{path to where you want to store the file generated (file is generated in a folder with the same name as the site id. make sure the folder is already there before beforehand)}
 }
 \value{
 2D STEP-GENDEC-NC input file formats ".sol" for all simulation grid cells
 }
 \description{
-gen_step_file generates examples of STEP initialisation file in excel format
+gen_step_file generates examples of STEP initialization file in excel format
 }
 \examples{
 \dontrun{

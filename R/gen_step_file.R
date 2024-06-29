@@ -27,12 +27,11 @@ gen_step_file = function(filepath,
                          state.date,
                          end.date,
                          isite){
+  data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
   if(filename=="dat"){
-    data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
     myfile <- file.path(paste0(filepath,"/",isite,"/","pluri",'.', filename))
     write.table(data, file = myfile,sep="\t",col.names=FALSE, row.names=FALSE,na="",quote=FALSE)
   }else{
-    data<-read_excel(paste0(filepath,"/",filename,'.xlsx'))
     for (i in state.date:end.date) {
       myfile <- file.path(paste0(filepath,"/",isite,"/","S01001", i,'.', filename))
       write.table(data, file = myfile,sep="\t",col.names=FALSE, row.names=FALSE,na="",quote=FALSE)

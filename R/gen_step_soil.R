@@ -8,14 +8,13 @@
 #' soil_water4, soil_temp4, clay4, sand4, pH4, silt4, soil_temp5
 #' @param start_yr the two last digits of the first year of simulation. e.g. for 2012 it is "12"
 #' @param end_yr the two last digits of the last year of simulation.. e.g. for 2020 it is "20"
-#' @param folder_patch path to where you want to store the file generated
+#' @param folder_patch path to where you want to store the file generated (file is generated in a folder with the same name as the site id. make sure the folder is already there before beforehand)
 #'
-#' @description gen_step_file generates examples of STEP initialisation file in excel format
+#' @description gen_step_file generates examples of STEP initialization file in excel format
 #'
 #' @return 2D STEP-GENDEC-NC input file formats ".sol" for all simulation grid cells
 #' @export
 #'
-#' @importFrom
 #'
 #' @examples
 #' \dontrun{
@@ -30,18 +29,18 @@ gen_step_soil <- function(dataframe,
                           start_yr,
                           end_yr,
                           folder_patch
-                          ){
-
+){
 
   for(i in 1:nrow(dataframe)){
-
     # import sol file from rstep
-    t = sol
+    t <- rstep::sol
     t[2,2][t[2,2]=="ZONE SAHELIENNE DU SENEGAL"] <- paste0("ZONE SAHELIENNE")
 
     # format the sol file for each site using the dataset
-    t[1,2][t[1,2] =="SITE RSP_six_forage"] <- paste0("SITE_",dataframe[i,"id"]," [long_lat: ",dataframe[i,"coord"],"]")
+    t[1,2][t[1,2] =="SITE RSP_six_forage"] <- paste0("SITE_",dataframe[i,"id"]," [long_lat: ",dataframe[i,"coord.x"],"]")
     t[3,2][t[3,2]=="0.29648000000000002"] <- paste0(dataframe[i,"albedo"])
+
+    # column 2character
     t[5,2][t[5,2] =="0.6"] <- paste0(dataframe[i,"soil_water1"])
     t[6,2][t[6,2] =="17.87"] <- paste0(dataframe[i,"soil_temp1"])
     t[8,2][t[8,2] == "5"] <-paste0(dataframe[i,"clay1"])
@@ -49,27 +48,16 @@ gen_step_soil <- function(dataframe,
     t[10,2][t[10,2] == "7.4"] <-paste0(dataframe[i,"pH1"])
     t[11,2][t[11,2] == "2"] <- paste0(dataframe[i,"silt1"])
 
-    t[5,3][t[5,3] == t[5,3]] <- dataframe[i,"soil_water2"]
-    t[6,3][t[6,3] == t[6,3]] <- dataframe[i," soil_temp2"]
-    t[8,3][t[8,3] == t[8,3]] <-dataframe[i,"clay2"]
-    t[9,3][t[9,3] == t[9,3]] <-dataframe[i,"sand2"]
-    t[10,3][t[10,3] == t[10,3]] <-dataframe[i,"pH2"]
-    t[11,3][t[11,3] == t[11,3]] <- dataframe[i,"silt2"]
-
-    t[5,4][t[5,4] == t[5,4]] <- dataframe[i,"soil_water3"]
-    t[6,4][t[6,4] == t[6,4]] <- dataframe[i,"soil_temp3"]
-    t[8,4][t[8,4] == t[8,4]] <-dataframe[i,"clay3"]
-    t[9,4][t[9,4] == t[9,4]] <-dataframe[i,"sand3"]
-    t[10,4][t[10,4] == t[10,4]] <-dataframe[i,"pH3"]
-    t[11,4][t[11,4] == t[11,4]] <- dataframe[i,"silt3"]
-
-    t[5,5][t[5,5] == t[5,5]] <- dataframe[i,"soil_water4"]
-    t[6,5][t[6,5] == t[6,5]] <- dataframe[i,"soil_temp4"]
-    t[8,5][t[8,5] == t[8,5]] <-dataframe[i,"clay4"]
-    t[9,5][t[9,5] == t[9,5]] <-dataframe[i,"sand4"]
-    t[10,5][t[10,5] == t[10,5]] <-dataframe[i,"pH4"]
-    t[11,5][t[11,5] == t[11,5]] <- dataframe[i,"silt4"]
-
+    # column 3 to 6  = numeric
+    for(j in 2:4){
+      t[5,j+1][t[5,j+1] == t[5,j+1]] <- dataframe[i, paste0("soil_water", j)]
+      t[6,j+1][t[6,j+1] == t[6,j+1]] <- dataframe[i,paste0("soil_temp", j)]
+      t[8,j+1][t[8,j+1] == t[8,j+1]] <-dataframe[i,paste0("clay", j)]
+      t[9,j+1][t[9,j+1] == t[9,j+1]] <-dataframe[i,paste0("sand", j)]
+      t[10,j+1][t[10,j+1] == t[10,j+1]] <-dataframe[i,paste0("pH", j)]
+      t[11,j+1][t[11,j+1] == t[11,j+1]] <- dataframe[i,paste0("silt", j)]
+    }
+    # column 7
     t[6,6][t[6,6] == t[6,6]] <- dataframe[i,"soil_temp5"]
 
     # write sol file in the new folder
