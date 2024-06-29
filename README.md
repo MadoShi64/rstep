@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/MadoShi64/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/MadoShi64/rstep/actions)
+[![R-CMD-check](https://github.com/fredi-agbohessou/rstep/workflows/R-CMD-check/badge.svg)](https://github.com/fredi-agbohessou/rstep/actions)
 <!-- badges: end -->
 
 ## Overview
@@ -42,7 +42,7 @@ The development version of rstep can be installed from GitHub:
 
 ``` r
 install.packages("remotes")
-remotes::install_github("MadoShi64/rstep")
+remotes::install_github("fredi-agbohessou/rstep")
 ```
 
 ## Some examples
